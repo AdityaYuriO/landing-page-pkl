@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Promosi Produk Owner | Penyewaan Alat Outdoor dan Camping</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            primary: '#1B4332',
+                            secondary: '#2D6A4F',
+                            light: '#40916C',
+                        },
+                        campfire: {
+                            terracotta: '#E07A5F',
+                            amber: '#D97706',
+                            hover: '#C85A3D'
+                        },
+                        ivory: {
+                            warm: '#F4F1DE',
+                            clean: '#F8F9FA'
+                        },
+                        charcoal: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Lora"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-ivory-clean text-charcoal font-sans antialiased selection:bg-campfire-terracotta selection:text-white overflow-x-hidden">
+
+    <!-- =====================================================================
+         1. NAVBAR RESPONSIF (#1B4332)
+    ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-forest-primary text-white shadow-lg border-b border-forest-secondary/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Identitas Marketplace Owner -->
+                <a href="#" class="flex items-center space-x-3 group focus:outline-none">
+                    <div class="w-11 h-11 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15 shadow-inner group-hover:bg-campfire-terracotta transition-colors duration-300">
+                        <i class="ph-fill ph-megaphone text-2xl text-ivory-warm"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-serif font-bold text-base sm:text-lg leading-tight tracking-tight text-ivory-warm">
+                                RimbaRent
+                            </span>
+                        </div>
+                        <span class="block text-xs font-medium text-emerald-200/90 tracking-wider uppercase">
+                                Promo Owner
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-ivory-warm/90">
+                    <a href="#target-manfaat" class="hover:text-campfire-terracotta transition-colors">Target &amp; Manfaat</a>
+                    <a href="#paket-promosi" class="hover:text-campfire-terracotta transition-colors">Paket Promosi</a>
+                    <a href="#simulasi-jangkauan" class="hover:text-campfire-terracotta transition-colors">Simulasi Jangkauan</a>
+                    <a href="#alur-dashboard" class="hover:text-campfire-terracotta transition-colors">Dashboard &amp; Alur</a>
+                </nav>
+
+                <!-- Tombol Aksi Navbar -->
+                <div class="flex items-center space-x-2.5 sm:space-x-3">
+                    <a href="#paket-promosi" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-ivory-warm bg-forest-secondary hover:bg-forest-light border border-white/15 transition">
+                        Lihat Paket Promosi
+                    </a>
+
+                    <button type="button" onclick="openPromoModal()"
+                        class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                        <i class="ph-bold ph-rocket-launch text-base mr-1.5 sm:mr-2"></i>
+                        Promosikan Produk
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi"
+                        class="lg:hidden p-2.5 rounded-xl text-ivory-warm hover:bg-forest-secondary focus:outline-none cursor-pointer">
+                        <i class="ph-bold ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-forest-primary border-t border-forest-secondary/50 px-4 pt-3 pb-5 space-y-2">
+            <a href="#target-manfaat" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Target &amp; Manfaat</a>
+            <a href="#paket-promosi" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Paket Promosi</a>
+            <a href="#simulasi-jangkauan" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Simulasi Jangkauan</a>
+            <a href="#alur-dashboard" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Dashboard &amp; Alur</a>
+            <div class="pt-2 grid grid-cols-1 gap-2">
+                <a href="#paket-promosi" class="mobile-nav-link flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-bold text-ivory-warm bg-forest-secondary hover:bg-forest-light border border-white/15">
+                    Lihat Paket Promosi
+                </a>
+                <button type="button" onclick="openPromoModal()" class="mobile-nav-link flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow">
+                    Promosikan Produk
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION & KARTU PRATINJAU PERFORMA / DASHBOARD OWNER (#F4F1DE)
+    ===================================================================== -->
+    <section class="relative overflow-hidden bg-ivory-warm pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-stone-200/80">
+        <!-- Decorative Topographic SVG Pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="topo-promo" width="120" height="120" patternUnits="userSpaceOnUse">
+                        <path d="M0 60 Q 30 30, 60 60 T 120 60" fill="none" stroke="#1B4332" stroke-width="1.5"/>
+                        <path d="M0 90 Q 30 60, 60 90 T 120 90" fill="none" stroke="#2D6A4F" stroke-width="1"/>
+                        <path d="M0 30 Q 30 0, 60 30 T 120 30" fill="none" stroke="#1B4332" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#topo-promo)"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Kolom Kiri: Copywriting & Tombol CTA Utama -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-forest-secondary text-white shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-campfire-terracotta mr-2 animate-pulse"></span>
+                        Paket Promosi Produk Owner • Harga Terjangkau Mulai Rp 29.000
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-primary leading-tight">
+                        Tingkatkan Visibilitas Alat Campingmu di Marketplace
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Layanan promosi berbayar dengan harga terjangkau yang ditujukan kepada owner yang ingin meningkatkan visibilitas produk penyewaan mereka di marketplace. Melalui layanan ini, owner dapat mencoba fitur promosi untuk memperkenalkan produk kepada lebih banyak calon penyewa.
+                    </p>
+
+                    <!-- Kotak Call to Action Utama -->
+                    <div class="bg-white/90 backdrop-blur-sm border-l-4 border-campfire-terracotta rounded-2xl p-4 sm:p-5 shadow-sm text-left">
+                        <p class="text-sm sm:text-base font-medium text-charcoal leading-relaxed">
+                            “Ingin produk penyewaanmu lebih mudah ditemukan calon pelanggan? Coba layanan promosi marketplace kami dengan harga terjangkau!”
+                        </p>
+                    </div>
+
+                    <!-- Dua Tombol CTA Hero -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button type="button" onclick="openPromoModal()"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            <i class="ph-bold ph-rocket-launch text-xl mr-2.5"></i>
+                            Promosikan Produk
+                        </button>
+
+                        <a href="#paket-promosi"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-forest-secondary hover:bg-forest-primary shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                            <i class="ph-bold ph-tag text-xl mr-2.5"></i>
+                            Lihat Paket Promosi
+                        </a>
+                    </div>
+
+                    <!-- Micro Trust Indicators -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2 text-xs sm:text-sm text-charcoal/80 font-medium">
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Durasi Jelas (3–14 Hari)
+                        </span>
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Laporan Performa di Dashboard
+                        </span>
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Cocok Uji Coba Owner Pemula
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Pratinjau Dashboard & Performa Promosi Owner -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-forest-primary via-forest-secondary to-campfire-amber rounded-3xl transform rotate-2 opacity-20 blur-sm"></div>
+
+                        <div class="relative bg-forest-primary text-ivory-warm rounded-3xl p-6 sm:p-7 shadow-2xl border border-white/10 space-y-5">
+                            <!-- Header Dashboard Mini -->
+                            <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                                <div>
+                                    <span class="inline-block px-2.5 py-0.5 rounded-md bg-campfire-terracotta text-white text-[10px] font-extrabold uppercase tracking-wider mb-1">
+                                        Dashboard Owner • Live Preview
+                                    </span>
+                                    <h2 class="font-serif text-lg sm:text-xl font-bold text-white">
+                                        Performa Promosi Produk
+                                    </h2>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-500/30">
+                                    ● Aktif
+                                </span>
+                            </div>
+
+                            <!-- Produk yang Dipromosikan -->
+                            <div class="bg-white/10 rounded-2xl p-3.5 border border-white/10 flex items-center justify-between gap-3">
+                                <div class="flex items-center space-x-3 min-w-0">
+                                    <div class="w-11 h-11 rounded-xl bg-forest-secondary flex items-center justify-center text-amber-300 flex-shrink-0">
+                                        <i class="ph-duotone ph-tent text-2xl"></i>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p class="text-sm font-bold text-white truncate">Tenda Dome 4P Double Layer</p>
+                                        <p class="text-[11px] text-emerald-200">Paket Eksplorasi • Sisa 5 Hari</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-extrabold text-campfire-terracotta flex-shrink-0">+64% Klik</span>
+                            </div>
+
+                            <!-- 3 Metrik Performa -->
+                            <div class="grid grid-cols-3 gap-2.5 text-center">
+                                <div class="bg-[#133124] p-3 rounded-2xl border border-white/10">
+                                    <p class="text-[10px] uppercase tracking-wider text-ivory-warm/70">Tayangan</p>
+                                    <p class="font-serif text-lg sm:text-xl font-extrabold text-white mt-0.5">4.820</p>
+                                    <p class="text-[10px] font-bold text-emerald-300">↑ 2,4x lipat</p>
+                                </div>
+                                <div class="bg-[#133124] p-3 rounded-2xl border border-white/10">
+                                    <p class="text-[10px] uppercase tracking-wider text-ivory-warm/70">Klik Produk</p>
+                                    <p class="font-serif text-lg sm:text-xl font-extrabold text-amber-300 mt-0.5">396</p>
+                                    <p class="text-[10px] font-bold text-emerald-300">CTR 8,2%</p>
+                                </div>
+                                <div class="bg-[#133124] p-3 rounded-2xl border border-white/10">
+                                    <p class="text-[10px] uppercase tracking-wider text-ivory-warm/70">Permintaan Sewa</p>
+                                    <p class="font-serif text-lg sm:text-xl font-extrabold text-white mt-0.5">14</p>
+                                    <p class="text-[10px] font-bold text-campfire-terracotta">Transaksi</p>
+                                </div>
+                            </div>
+
+                            <!-- Visualisasi Bar Performa Mingguan (SVG) -->
+                            <div class="bg-[#133124] rounded-2xl p-4 border border-white/10 space-y-2">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-ivory-warm/85">Tren Kunjungan Calon Penyewa</span>
+                                    <span class="text-emerald-300 font-bold">Periode Aktif</span>
+                                </div>
+                                <svg class="w-full h-16" viewBox="0 0 280 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="10" y="38" width="24" height="18" rx="4" fill="#2D6A4F"/>
+                                    <rect x="48" y="30" width="24" height="26" rx="4" fill="#2D6A4F"/>
+                                    <rect x="86" y="24" width="24" height="32" rx="4" fill="#40916C"/>
+                                    <rect x="124" y="18" width="24" height="38" rx="4" fill="#40916C"/>
+                                    <rect x="162" y="12" width="24" height="44" rx="4" fill="#D97706"/>
+                                    <rect x="200" y="8" width="24" height="48" rx="4" fill="#E07A5F"/>
+                                    <rect x="238" y="5" width="24" height="51" rx="4" fill="#E07A5F"/>
+                                </svg>
+                            </div>
+
+                            <div class="flex items-center justify-between text-xs pt-1">
+                                <span class="text-ivory-warm/75">Pantau langsung dari Dashboard Owner</span>
+                                <a href="#alur-dashboard" class="font-bold text-campfire-terracotta hover:text-amber-300">
+                                    Lihat Alur →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. TARGET KONSUMEN (4 KARTU) & 5 MANFAAT PRODUK
+    ===================================================================== -->
+    <section id="target-manfaat" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+            
+            <!-- Bagian A: Target Konsumen (4 Segmen Utama) -->
+            <div>
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary/15 text-forest-secondary mb-3">
+                        Target Konsumen Layanan Promosi
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                        Dirancang untuk Owner yang Ingin Tumbuh Lebih Cepat
+                    </h2>
+                    <p class="text-charcoal/80 text-base sm:text-lg">
+                        Baik baru mengunggah perlengkapan pertama maupun sudah mengelola rental kecil, fitur promosi membantu produkmu tampil menonjol di hadapan calon penyewa.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Target 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                            <i class="ph-bold ph-storefront text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Owner Baru di Marketplace</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Owner baru yang ingin memperkenalkan produknya secara cepat kepada calon penyewa di katalog marketplace.
+                        </p>
+                    </div>
+
+                    <!-- Target 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                            <i class="ph-bold ph-tent text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Pemilik Rental Skala Kecil</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Pemilik rental camping skala kecil yang ingin meningkatkan okupansi unit menjelang akhir pekan dan musim liburan.
+                        </p>
+                    </div>
+
+                    <!-- Target 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                            <i class="ph-bold ph-trend-up text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Produk Belum Banyak Pelanggan</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Owner yang memiliki produk berkualitas tetapi belum banyak mendapatkan pelanggan karena kalah bersaing di daftar bawah.
+                        </p>
+                    </div>
+
+                    <!-- Target 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                            <i class="ph-bold ph-flask text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Ingin Mencoba Promosi</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Owner yang ingin mencoba layanan promosi marketplace dengan anggaran terjangkau sebelum berinvestasi lebih besar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian B: 5 Manfaat Produk -->
+            <div class="bg-ivory-warm rounded-3xl p-6 sm:p-10 lg:p-12 border border-stone-200/80">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-primary text-ivory-warm">
+                            5 Manfaat Layanan Promosi
+                        </span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-forest-primary leading-tight">
+                            Mengapa Paket Promosi Membantu Bisnis Rentalmu Berkembang?
+                        </h2>
+                        <p class="text-sm sm:text-base text-charcoal/85 leading-relaxed">
+                            Layanan promosi dirancang agar tetap terjangkau bagi owner pemula maupun usaha kecil, sambil memberikan jalur visibilitas yang terukur di dalam marketplace.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-3.5">
+                        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-stone-200/70 flex items-start space-x-4">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-sm">1</span>
+                            <div>
+                                <h3 class="font-bold text-forest-primary text-sm sm:text-base">Membantu Owner Memperkenalkan Produk kepada Calon Penyewa</h3>
+                                <p class="text-xs sm:text-sm text-charcoal/80 mt-0.5">Menempatkan perlengkapan camping kamu agar lebih cepat terlihat oleh calon penyewa yang sedang mencari alat.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-stone-200/70 flex items-start space-x-4">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-sm">2</span>
+                            <div>
+                                <h3 class="font-bold text-forest-primary text-sm sm:text-base">Memberikan Kesempatan Mencoba Layanan Promosi</h3>
+                                <p class="text-xs sm:text-sm text-charcoal/80 mt-0.5">Pilihan paket berbiaya ringan memungkinkan owner menguji efektivitas promosi tanpa tekanan anggaran besar.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-stone-200/70 flex items-start space-x-4">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-sm">3</span>
+                            <div>
+                                <h3 class="font-bold text-forest-primary text-sm sm:text-base">Meningkatkan Visibilitas Produk Jika Diterapkan dengan Baik</h3>
+                                <p class="text-xs sm:text-sm text-charcoal/80 mt-0.5">Kombinasi penempatan promosi dengan foto produk yang jelas, harga transparan, dan deskripsi lengkap memaksimalkan klik penyewa.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-stone-200/70 flex items-start space-x-4">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-campfire-terracotta text-white font-bold flex items-center justify-center text-sm">4</span>
+                            <div>
+                                <h3 class="font-bold text-forest-primary text-sm sm:text-base">Memberikan Alternatif Pemasaran Selain Promosi Mandiri</h3>
+                                <p class="text-xs sm:text-sm text-charcoal/80 mt-0.5">Melengkapi promosi mandiri owner dengan eksposur langsung di dalam ekosistem marketplace yang sudah memiliki trafik penyewa.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-stone-200/70 flex items-start space-x-4">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-campfire-amber text-white font-bold flex items-center justify-center text-sm">5</span>
+                            <div>
+                                <h3 class="font-bold text-forest-primary text-sm sm:text-base">Membantu Owner Mengembangkan Bisnis Penyewaan</h3>
+                                <p class="text-xs sm:text-sm text-charcoal/80 mt-0.5">Mendorong perputaran sewa yang lebih rutin sehingga owner bisa menambah stok alat dan memperluas usaha rental.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. PILIHAN PAKET PROMOSI INTERAKTIF (3 PAKET UTAMA)
+    ===================================================================== -->
+    <section id="paket-promosi" class="scroll-mt-16 py-16 lg:py-24 bg-ivory-warm border-y border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                    Pilihan Paket Promosi Owner
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Pilih Paket Promosi Sesuai Tahap Bisnis &amp; Anggaranmu
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg">
+                    Setiap paket dilengkapi informasi durasi, cakupan penempatan di marketplace, dan laporan performa yang jelas agar mudah dipantau dari dashboard owner.
+                </p>
+            </div>
+
+            <!-- Grid 3 Paket Promosi -->
+            <div id="promo-packages-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Diisi dinamis via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. KALKULATOR SIMULASI ESTIMASI JANGKAUAN & PERFORMA PROMOSI
+    ===================================================================== -->
+    <section id="simulasi-jangkauan" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary/15 text-forest-secondary mb-3">
+                    Simulasi Estimasi Performa
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Simulasikan Estimasi Jangkauan &amp; Klik Produkmu
+                </h2>
+                <p class="text-charcoal/80 text-base">
+                    Sesuaikan paket promosi dan jumlah produk yang dipromosikan untuk melihat proyeksi tayangan, klik produk, dan potensi permintaan sewa.
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl border border-stone-200 overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Kontrol Simulasi Kiri -->
+                    <div class="lg:col-span-7 p-6 sm:p-10 space-y-6">
+                        <div>
+                            <label for="sim-package-select" class="block text-sm font-bold text-forest-primary mb-2">
+                                1. Pilih Paket Promosi
+                            </label>
+                            <select id="sim-package-select" class="w-full px-4 py-3.5 rounded-xl border border-stone-300 text-charcoal font-medium bg-ivory-clean focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                                <option value="pemula" selected>Paket Pemula / Boost Awal (3 Hari • Rp 29.000)</option>
+                                <option value="eksplorasi">Paket Eksplorasi / Sorotan Kategori (7 Hari • Rp 65.000)</option>
+                                <option value="unggulan">Paket Unggulan / Beranda Utama (14 Hari • Rp 120.000)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="sim-product-count" class="text-sm font-bold text-forest-primary">
+                                    2. Jumlah Produk yang Dipromosikan
+                                </label>
+                                <span class="px-3 py-1 rounded-lg bg-forest-secondary/15 text-forest-primary font-extrabold text-sm">
+                                    <span id="sim-product-display">2</span> Produk
+                                </span>
+                            </div>
+                            <input type="range" id="sim-product-count" min="1" max="8" value="2" class="w-full h-2.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-campfire-terracotta">
+                            <div class="flex justify-between text-xs text-charcoal/60 mt-1">
+                                <span>1 Produk</span>
+                                <span>4 Produk</span>
+                                <span>8 Produk</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-ivory-warm p-4 rounded-2xl border border-stone-200 space-y-1.5">
+                            <p class="text-xs font-bold text-forest-primary">Cakupan Penempatan Terpilih:</p>
+                            <p id="sim-coverage-text" class="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                                Tampil di urutan prioritas awal hasil pencarian &amp; rekomendasi produk relevan selama 3 hari.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hasil Estimasi Kanan (#1B4332) -->
+                    <div class="lg:col-span-5 bg-forest-primary text-ivory-warm p-6 sm:p-10 flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="inline-block px-3 py-1 rounded-lg bg-forest-secondary text-emerald-200 text-xs font-bold uppercase tracking-wider">
+                                    Estimasi Laporan Promosi
+                                </span>
+                                <span class="text-xs font-bold text-amber-300">
+                                    Biaya: Rp <span id="sim-cost-display">58.000</span>
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3">
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10 flex items-center justify-between">
+                                    <div>
+                                        <p class="text-[11px] text-ivory-warm/75">Estimasi Tayangan (Impresi)</p>
+                                        <p class="font-serif text-xl font-extrabold text-white mt-0.5">
+                                            <span id="sim-impressions">3.600</span>x
+                                        </p>
+                                    </div>
+                                    <i class="ph-duotone ph-eye text-2xl text-emerald-300"></i>
+                                </div>
+
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10 flex items-center justify-between">
+                                    <div>
+                                        <p class="text-[11px] text-ivory-warm/75">Estimasi Klik Produk</p>
+                                        <p class="font-serif text-xl font-extrabold text-amber-300 mt-0.5">
+                                            <span id="sim-clicks">270</span> Klik
+                                        </p>
+                                    </div>
+                                    <i class="ph-duotone ph-cursor-click text-2xl text-amber-300"></i>
+                                </div>
+
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10 flex items-center justify-between">
+                                    <div>
+                                        <p class="text-[11px] text-ivory-warm/75">Potensi Permintaan Sewa</p>
+                                        <p class="font-serif text-xl font-extrabold text-white mt-0.5">
+                                            ~<span id="sim-inquiries">9</span> Penyewa
+                                        </p>
+                                    </div>
+                                    <i class="ph-duotone ph-bag text-2xl text-campfire-terracotta"></i>
+                                </div>
+                            </div>
+
+                            <p class="text-[11px] text-ivory-warm/70 leading-relaxed">
+                                *Estimasi bersifat ilustrasi berdasarkan rata-rata trafik kategori outdoor. Hasil aktual dipengaruhi kualitas foto, kelengkapan deskripsi, dan kewajaran harga sewa.
+                            </p>
+                        </div>
+
+                        <button type="button" onclick="activateSelectedFromSim()" class="w-full py-3.5 px-5 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition cursor-pointer">
+                            Promosikan Produk dengan Simulasi Ini →
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. PRATINJAU ALUR STRATEGI PENJUALAN & LAPORAN DASHBOARD OWNER
+    ===================================================================== -->
+    <section id="alur-dashboard" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-t border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                    Strategi Penjualan di Marketplace
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Alur Aktivasi &amp; Pemantauan Promosi di Dashboard Owner
+                </h2>
+                <p class="text-charcoal/80 text-base">
+                    Dirancang terintegrasi setelah owner mendaftarkan produk, sehingga setiap langkah promosi mudah dikelola dan dievaluasi hasilnya.
+                </p>
+            </div>
+
+            <!-- 4 Tahap Strategi Penjualan -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tahap 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-9 h-9 rounded-xl bg-forest-primary text-white font-bold flex items-center justify-center text-sm">1</span>
+                            <i class="ph-duotone ph-upload-simple text-2xl text-forest-secondary"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Setelah Mendaftarkan Produk</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Begitu produk perlengkapan outdoor diunggah ke marketplace, sistem menawarkan opsi promosi agar produk langsung mendapat dorongan awal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tahap 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-9 h-9 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-sm">2</span>
+                            <i class="ph-duotone ph-sliders text-2xl text-forest-secondary"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Pilihan Paket di Dashboard Owner</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Owner memilih paket promosi sesuai kebutuhan langsung dari dashboard toko—mulai dari Boost Awal hingga Beranda Utama.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tahap 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-9 h-9 rounded-xl bg-campfire-amber text-white font-bold flex items-center justify-center text-sm">3</span>
+                            <i class="ph-duotone ph-calendar-check text-2xl text-campfire-amber"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Info Durasi &amp; Cakupan Jelas</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Sebelum aktivasi, owner melihat durasi aktif promosi (hari) dan area cakupan tampilnya produk secara transparan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tahap 4 -->
+                <div class="bg-white p-6 rounded-2xl border-2 border-campfire-terracotta shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-9 h-9 rounded-xl bg-campfire-terracotta text-white font-bold flex items-center justify-center text-sm">4</span>
+                            <i class="ph-duotone ph-chart-line-up text-2xl text-campfire-terracotta"></i>
+                        </div>
+                        <h3 class="font-bold text-forest-primary text-base mb-2">Laporan Performa Promosi</h3>
+                        <p class="text-sm text-charcoal/80 leading-relaxed">
+                            Pantau jumlah tayangan, klik produk, dan interaksi calon penyewa melalui laporan performa yang tersedia di dashboard owner.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. SECTION CALL TO ACTION (CTA) PENUTUP
+    ===================================================================== -->
+    <section class="py-16 lg:py-20 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl bg-forest-primary text-ivory-warm p-8 sm:p-12 lg:p-14 overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+                    <span class="inline-block px-4 py-1 rounded-full bg-forest-secondary text-xs font-bold uppercase tracking-wider text-emerald-200">
+                        Mulai Tingkatkan Performa Toko Kamu
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                        Ingin produk penyewaanmu lebih mudah ditemukan calon pelanggan?
+                    </h2>
+                    <p class="text-base sm:text-lg text-ivory-warm/90 leading-relaxed">
+                        Coba layanan promosi marketplace kami dengan harga terjangkau!
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <button type="button" onclick="openPromoModal()"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition-all duration-200 cursor-pointer">
+                            <i class="ph-bold ph-rocket-launch text-xl mr-2"></i>
+                            Promosikan Produk
+                        </button>
+                        <a href="#paket-promosi"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-forest-secondary hover:bg-emerald-700 border border-white/15 shadow transition-all duration-200">
+                            <i class="ph-bold ph-tag text-xl mr-2"></i>
+                            Lihat Paket Promosi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. FOOTER (#1B4332)
+    ===================================================================== -->
+    <footer class="bg-forest-primary text-ivory-warm border-t border-forest-secondary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+                
+                <!-- Brand & Deskripsi -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15">
+                            <i class="ph-fill ph-megaphone text-xl text-ivory-warm"></i>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-lg text-white">
+                                RimbaRent
+                            </span>
+                            <span class="text-xs text-campfire-terracotta font-bold uppercase tracking-wider">Layanan Promosi Produk Owner</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-ivory-warm/80 leading-relaxed max-w-md">
+                        Solusi promosi terjangkau di marketplace penyewaan perlengkapan camping &amp; outdoor untuk membantu owner meningkatkan visibilitas produk dan mengembangkan usaha sewa.
+                    </p>
+                </div>
+
+                <!-- Navigasi -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li><a href="#target-manfaat" class="hover:text-campfire-terracotta transition-colors">Target &amp; Manfaat Owner</a></li>
+                        <li><a href="#paket-promosi" class="hover:text-campfire-terracotta transition-colors">Pilihan Paket Promosi</a></li>
+                        <li><a href="#simulasi-jangkauan" class="hover:text-campfire-terracotta transition-colors">Simulasi Jangkauan</a></li>
+                        <li><a href="#alur-dashboard" class="hover:text-campfire-terracotta transition-colors">Alur Dashboard Owner</a></li>
+                    </ul>
+                </div>
+
+                <!-- Paket Layanan -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Paket Tersedia</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li>Paket Pemula / Boost Awal (3 Hari • Rp 29.000)</li>
+                        <li>Paket Eksplorasi / Sorotan Kategori (7 Hari • Rp 65.000)</li>
+                        <li>Paket Unggulan / Beranda Utama (14 Hari • Rp 120.000)</li>
+                        <li>Laporan Tayangan, Klik &amp; Interaksi di Dashboard</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory-warm/70 gap-4">
+                <p>&copy; 2026 Penyewaan Alat Outdoor dan Camping. Seluruh Hak Cipta Dilindungi.</p>
+                <p>Layanan promosi terukur untuk pertumbuhan mitra owner marketplace.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL AKTIVASI / CHECKOUT PROMOSI PRODUK OWNER
+    ===================================================================== -->
+    <div id="promo-checkout-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-stone-200 my-auto">
+            <!-- Header Modal -->
+            <div class="bg-forest-primary text-ivory-warm px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-campfire-terracotta">Aktivasi Fitur Promosi</span>
+                    <h3 class="font-serif text-xl font-bold text-white">Promosikan Produk Owner</h3>
+                </div>
+                <button type="button" id="close-promo-modal" class="p-2 rounded-xl text-ivory-warm hover:bg-forest-secondary transition cursor-pointer">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Body Modal -->
+            <div class="p-6 max-h-[82vh] overflow-y-auto space-y-5">
+                <form id="promo-activation-form" class="space-y-4">
+                    <div>
+                        <label for="promo-package-field" class="block text-xs font-bold text-charcoal mb-1">
+                            Paket Promosi Dipilih <span class="text-campfire-terracotta">*</span>
+                        </label>
+                        <select id="promo-package-field" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm font-medium bg-ivory-clean focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                            <option value="pemula">Paket Pemula / Boost Awal (3 Hari • Rp 29.000/produk)</option>
+                            <option value="eksplorasi" selected>Paket Eksplorasi / Sorotan Kategori (7 Hari • Rp 65.000/produk)</option>
+                            <option value="unggulan">Paket Unggulan / Beranda Utama (14 Hari • Rp 120.000/produk)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="promo-product-name" class="block text-xs font-bold text-charcoal mb-1">
+                                Nama Produk yang Dipromosikan <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="promo-product-name" required placeholder="Contoh: Tenda Dome 4P & Matras"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                        <div>
+                            <label for="promo-qty-field" class="block text-xs font-bold text-charcoal mb-1">
+                                Jumlah Produk Dipromosikan
+                            </label>
+                            <input type="number" id="promo-qty-field" min="1" max="10" value="1"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="promo-owner-name" class="block text-xs font-bold text-charcoal mb-1">
+                                Nama Toko / Owner <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="promo-owner-name" required placeholder="Contoh: Rimba Camp Gear"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                        <div>
+                            <label for="promo-owner-contact" class="block text-xs font-bold text-charcoal mb-1">
+                                Email / WhatsApp Dashboard <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="promo-owner-contact" required placeholder="owner@email.com / 0812xxxx"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                    </div>
+
+                    <!-- Ringkasan Durasi, Cakupan & Biaya -->
+                    <div class="bg-ivory-warm p-4 rounded-2xl border border-stone-200 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-semibold text-charcoal/75">Durasi Aktif:</span>
+                            <span id="modal-promo-duration" class="font-bold text-forest-primary">7 Hari</span>
+                        </div>
+                        <div class="text-xs">
+                            <span class="font-semibold text-charcoal/75 block mb-0.5">Cakupan Penempatan:</span>
+                            <span id="modal-promo-scope" class="text-charcoal/90 font-medium">
+                                Sorotan teratas kategori perlengkapan &amp; rekomendasi produk terkait.
+                            </span>
+                        </div>
+                        <div class="pt-2 border-t border-stone-200 flex items-center justify-between">
+                            <span class="text-sm font-bold text-forest-primary">Total Biaya Paket Promosi:</span>
+                            <span class="font-serif text-xl font-extrabold text-campfire-terracotta">
+                                Rp <span id="modal-promo-total">65.000</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 px-6 rounded-xl text-sm sm:text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition cursor-pointer">
+                        Aktifkan Promosi Produk Sekarang
+                    </button>
+                </form>
+
+                <!-- Notifikasi Sukses Aktivasi Promosi -->
+                <div id="promo-activation-success" class="hidden bg-emerald-50 border border-emerald-300 rounded-2xl p-6 text-center space-y-3">
+                    <div class="w-14 h-14 rounded-full bg-forest-secondary text-white mx-auto flex items-center justify-center">
+                        <i class="ph-bold ph-check text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-forest-primary">
+                        Pengajuan Promosi Berhasil Diproses!
+                    </h4>
+                    <p id="promo-success-summary" class="text-xs sm:text-sm text-charcoal/85 leading-relaxed"></p>
+                    <p class="text-xs text-forest-secondary font-semibold">
+                        Laporan performa tayangan dan klik akan tersedia di dashboard owner setelah promosi berjalan.
+                    </p>
+                    <button type="button" id="close-promo-success-btn" class="mt-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-forest-primary hover:bg-forest-secondary transition cursor-pointer">
+                        Selesai
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT INTERAKTIVITAS PAKET PROMOSI & SIMULASI PERFORMA
+    ===================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Data 3 Pilihan Paket Promosi Owner
+            const promoPackages = [
+                {
+                    id: 'pemula',
+                    name: 'Paket Pemula / Boost Awal',
+                    badge: 'Uji Coba Hemat',
+                    price: 29000,
+                    durationDays: 3,
+                    durationLabel: '3 Hari Aktif',
+                    scopeShort: 'Urutan prioritas awal hasil pencarian & rekomendasi produk relevan selama 3 hari.',
+                    scopeFull: 'Penempatan awal di urutan pencarian & rekomendasi produk terkait untuk menguji respon penyewa.',
+                    baseImpressions: 1800,
+                    baseClicks: 135,
+                    baseInquiries: 4,
+                    featured: false,
+                    features: [
+                        'Durasi promosi 3 hari penuh',
+                        'Tampil di prioritas awal hasil pencarian',
+                        'Badge "Direkomendasikan" pada kartu alat',
+                        'Laporan tayangan & klik di dashboard owner'
+                    ]
+                },
+                {
+                    id: 'eksplorasi',
+                    name: 'Paket Eksplorasi / Sorotan Kategori',
+                    badge: 'Paling Populer',
+                    price: 65000,
+                    durationDays: 7,
+                    durationLabel: '7 Hari Aktif (1 Pekan)',
+                    scopeShort: 'Sorotan teratas kategori perlengkapan & rekomendasi produk terkait selama 7 hari.',
+                    scopeFull: 'Sorotan teratas kategori perlengkapan camping, pencarian lokal, dan rekomendasi produk terkait.',
+                    baseImpressions: 4800,
+                    baseClicks: 390,
+                    baseInquiries: 13,
+                    featured: true,
+                    features: [
+                        'Durasi promosi 7 hari (mencakup akhir pekan)',
+                        'Sorotan teratas di kategori alat camping pilihan',
+                        'Tampil di bagian rekomendasi produk relevan',
+                        'Laporan performa tayangan, klik & interaksi'
+                    ]
+                },
+                {
+                    id: 'unggulan',
+                    name: 'Paket Unggulan / Beranda Utama',
+                    badge: 'Jangkauan Maksimal',
+                    price: 120000,
+                    durationDays: 14,
+                    durationLabel: '14 Hari Aktif (2 Pekan)',
+                    scopeShort: 'Slot unggulan beranda utama, sorotan kategori & prioritas pencarian selama 14 hari.',
+                    scopeFull: 'Penempatan unggulan di area beranda marketplace, sorotan kategori, dan prioritas pencarian selama 14 hari.',
+                    baseImpressions: 11200,
+                    baseClicks: 940,
+                    baseInquiries: 32,
+                    featured: false,
+                    features: [
+                        'Durasi promosi 14 hari penuh (2 siklus weekend)',
+                        'Slot unggulan di beranda & halaman kategori',
+                        'Prioritas visibilitas tinggi bagi calon penyewa baru',
+                        'Laporan performa lengkap di dashboard owner'
+                    ]
+                }
+            ];
+
+            // 3. Render Kartu Pilihan Paket Promosi
+            const packagesGrid = document.getElementById('promo-packages-grid');
+
+            function renderPromoPackages() {
+                packagesGrid.innerHTML = promoPackages.map(pkg => {
+                    const cardStyle = pkg.featured
+                        ? 'bg-forest-primary text-ivory-warm border-2 border-campfire-terracotta shadow-2xl lg:-translate-y-2'
+                        : 'bg-white text-charcoal border border-stone-200/90 shadow-sm hover:shadow-lg';
+
+                    const titleColor = pkg.featured ? 'text-white' : 'text-forest-primary';
+                    const subTextColor = pkg.featured ? 'text-ivory-warm/80' : 'text-charcoal/75';
+                    const priceColor = pkg.featured ? 'text-amber-300' : 'text-forest-primary';
+                    const badgeStyle = pkg.featured
+                        ? 'bg-campfire-terracotta text-white'
+                        : 'bg-forest-secondary/15 text-forest-secondary';
+                    const btnStyle = pkg.featured
+                        ? 'bg-campfire-terracotta hover:bg-campfire-amber text-white shadow-lg'
+                        : 'bg-forest-secondary hover:bg-forest-primary text-white shadow-sm';
+
+                    return `
+                        <div class="rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${cardStyle}">
+                            <div class="space-y-5">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider ${badgeStyle}">
+                                        ${pkg.badge}
+                                    </span>
+                                    <span class="text-xs font-bold ${pkg.featured ? 'text-emerald-300' : 'text-forest-secondary'}">
+                                        ${pkg.durationLabel}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-serif text-xl sm:text-2xl font-bold ${titleColor}">
+                                        ${pkg.name}
+                                    </h3>
+                                    <p class="text-xs sm:text-sm ${subTextColor} mt-1.5 leading-relaxed">
+                                        ${pkg.scopeFull}
+                                    </p>
+                                </div>
+
+                                <div class="pt-2 pb-4 border-b ${pkg.featured ? 'border-white/15' : 'border-stone-200'}">
+                                    <span class="text-xs ${subTextColor} block">Biaya Promosi per Produk:</span>
+                                    <div class="flex items-baseline space-x-1 mt-0.5">
+                                        <span class="font-serif text-3xl font-extrabold ${priceColor}">
+                                            Rp ${pkg.price.toLocaleString('id-ID')}
+                                        </span>
+                                        <span class="text-xs ${subTextColor}">/ ${pkg.durationDays} hari</span>
+                                    </div>
+                                </div>
+
+                                <ul class="space-y-2.5 text-xs sm:text-sm">
+                                    ${pkg.features.map(feat => `
+                                        <li class="flex items-start space-x-2.5">
+                                            <i class="ph-fill ph-check-circle text-base mt-0.5 flex-shrink-0 ${pkg.featured ? 'text-campfire-terracotta' : 'text-forest-secondary'}"></i>
+                                            <span class="${pkg.featured ? 'text-ivory-warm/90' : 'text-charcoal/85'}">${feat}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="pt-7">
+                                <button type="button" onclick="selectPackageAndOpenModal('${pkg.id}')"
+                                    class="w-full py-3.5 px-5 rounded-xl text-sm font-bold transition cursor-pointer ${btnStyle}">
+                                    Pilih ${pkg.name.split('/')[0].trim()}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            renderPromoPackages();
+
+            // 4. Kalkulator Simulasi Estimasi Jangkauan & Performa Promosi
+            const simPkgSelect = document.getElementById('sim-package-select');
+            const simProductSlider = document.getElementById('sim-product-count');
+            const simProductDisplay = document.getElementById('sim-product-display');
+            const simCoverageText = document.getElementById('sim-coverage-text');
+            const simCostDisplay = document.getElementById('sim-cost-display');
+            const simImpressionsEl = document.getElementById('sim-impressions');
+            const simClicksEl = document.getElementById('sim-clicks');
+            const simInquiriesEl = document.getElementById('sim-inquiries');
+
+            function updateSimulation() {
+                const pkgId = simPkgSelect.value;
+                const count = Math.max(1, parseInt(simProductSlider.value, 10) || 1);
+                const pkg = promoPackages.find(p => p.id === pkgId) || promoPackages[1];
+
+                // Faktor skala multi-produk (produk ke-2 dst memiliki sedikit overlapping audiens)
+                const scaleFactor = 1 + (count - 1) * 0.72;
+                const totalCost = pkg.price * count;
+                const estImpressions = Math.round(pkg.baseImpressions * scaleFactor);
+                const estClicks = Math.round(pkg.baseClicks * scaleFactor);
+                const estInquiries = Math.max(2, Math.round(pkg.baseInquiries * scaleFactor));
+
+                simProductDisplay.textContent = count;
+                simCoverageText.textContent = `${pkg.scopeShort} (Mencakup ${count} produk terpilih).`;
+                simCostDisplay.textContent = totalCost.toLocaleString('id-ID');
+                simImpressionsEl.textContent = estImpressions.toLocaleString('id-ID');
+                simClicksEl.textContent = estClicks.toLocaleString('id-ID');
+                simInquiriesEl.textContent = estInquiries.toLocaleString('id-ID');
+            }
+
+            simPkgSelect.addEventListener('change', updateSimulation);
+            simProductSlider.addEventListener('input', updateSimulation);
+            updateSimulation();
+
+            // 5. Modal Aktivasi / Checkout Promosi Produk Owner
+            const promoModal = document.getElementById('promo-checkout-modal');
+            const promoForm = document.getElementById('promo-activation-form');
+            const promoSuccess = document.getElementById('promo-activation-success');
+            const promoPkgField = document.getElementById('promo-package-field');
+            const promoQtyField = document.getElementById('promo-qty-field');
+
+            function syncModalPackageSummary() {
+                const pkg = promoPackages.find(p => p.id === promoPkgField.value) || promoPackages[1];
+                const qty = Math.max(1, parseInt(promoQtyField.value, 10) || 1);
+                const total = pkg.price * qty;
+
+                document.getElementById('modal-promo-duration').textContent = `${pkg.durationDays} Hari`;
+                document.getElementById('modal-promo-scope').textContent = pkg.scopeFull;
+                document.getElementById('modal-promo-total').textContent = total.toLocaleString('id-ID');
+            }
+
+            promoPkgField.addEventListener('change', syncModalPackageSummary);
+            promoQtyField.addEventListener('input', syncModalPackageSummary);
+
+            window.openPromoModal = function(pkgId = null, qty = null) {
+                if (pkgId) {
+                    promoPkgField.value = pkgId;
+                }
+                if (qty) {
+                    promoQtyField.value = qty;
+                }
+                syncModalPackageSummary();
+                promoForm.classList.remove('hidden');
+                promoSuccess.classList.add('hidden');
+                promoModal.classList.remove('hidden');
+            };
+
+            window.selectPackageAndOpenModal = function(pkgId) {
+                openPromoModal(pkgId, parseInt(simProductSlider.value, 10) || 1);
+            };
+
+            window.activateSelectedFromSim = function() {
+                openPromoModal(simPkgSelect.value, parseInt(simProductSlider.value, 10) || 1);
+            };
+
+            document.getElementById('close-promo-modal').addEventListener('click', () => {
+                promoModal.classList.add('hidden');
+            });
+
+            promoForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const pkg = promoPackages.find(p => p.id === promoPkgField.value) || promoPackages[1];
+                const productName = document.getElementById('promo-product-name').value.trim();
+                const ownerName = document.getElementById('promo-owner-name').value.trim();
+                const qty = Math.max(1, parseInt(promoQtyField.value, 10) || 1);
+                const totalCost = (pkg.price * qty).toLocaleString('id-ID');
+
+                document.getElementById('promo-success-summary').innerHTML = `
+                    Aktivasi <strong>${pkg.name}</strong> (${pkg.durationLabel}) untuk toko <strong>${ownerName}</strong> pada produk <strong>${productName}</strong> (${qty} produk) dengan total biaya <strong>Rp ${totalCost}</strong> telah dicatat.
+                `;
+
+                promoForm.classList.add('hidden');
+                promoSuccess.classList.remove('hidden');
+            });
+
+            document.getElementById('close-promo-success-btn').addEventListener('click', () => {
+                promoModal.classList.add('hidden');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === promoModal) {
+                    promoModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
