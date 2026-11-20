@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Sewa Perlengkapan Camping Mini | Penyewaan Alat Outdoor dan Camping</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            primary: '#1B4332',
+                            secondary: '#2D6A4F',
+                            light: '#40916C',
+                        },
+                        campfire: {
+                            terracotta: '#E07A5F',
+                            amber: '#D97706',
+                            hover: '#C85A3D'
+                        },
+                        ivory: {
+                            warm: '#F4F1DE',
+                            clean: '#F8F9FA'
+                        },
+                        charcoal: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Lora"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-ivory-clean text-charcoal font-sans antialiased selection:bg-campfire-terracotta selection:text-white overflow-x-hidden">
+
+    <!-- =====================================================================
+         1. NAVBAR RESPONSIF (#1B4332)
+    ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-forest-primary text-white shadow-lg border-b border-forest-secondary/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Identitas Marketplace -->
+                <a href="#" class="flex items-center space-x-3 group focus:outline-none">
+                    <div class="w-11 h-11 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15 shadow-inner group-hover:bg-campfire-terracotta transition-colors duration-300">
+                        <i class="ph-fill ph-tent text-2xl text-ivory-warm"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-serif font-bold text-base sm:text-lg leading-tight tracking-tight text-ivory-warm">
+                                RimbaRent
+                            </span>
+                        </div>
+                        <span class="block text-xs font-medium text-emerald-200/90 tracking-wider uppercase">
+                            Paket Mini
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-ivory-warm/90">
+                    <a href="#manfaat-produk" class="hover:text-campfire-terracotta transition-colors">Keunggulan</a>
+                    <a href="#target-konsumen" class="hover:text-campfire-terracotta transition-colors">Target</a>
+                    <a href="#katalog-mini" class="hover:text-campfire-terracotta transition-colors">Katalog Satuan & Mini</a>
+                    <a href="#rekomendasi-addon" class="hover:text-campfire-terracotta transition-colors">Rekomendasi Add-on</a>
+                    <a href="#cara-sewa" class="hover:text-campfire-terracotta transition-colors">Cara Sewa</a>
+                </nav>
+
+                <!-- Action Buttons (Keranjang & Sewa Sekarang) -->
+                <div class="flex items-center space-x-2.5 sm:space-x-3">
+                    <!-- Tombol Keranjang Paket Mini -->
+                    <button type="button" onclick="openBookingModal()" aria-label="Buka Keranjang Paket Sewa"
+                        class="relative inline-flex items-center justify-center p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl bg-forest-secondary hover:bg-forest-light border border-white/15 text-ivory-warm transition cursor-pointer">
+                        <i class="ph-bold ph-backpack text-lg sm:mr-1.5"></i>
+                        <span class="hidden sm:inline text-xs font-bold">Paketku</span>
+                        <span id="nav-cart-badge" class="ml-1.5 px-2 py-0.5 text-xs font-extrabold rounded-full bg-campfire-amber text-white">
+                            0
+                        </span>
+                    </button>
+
+                    <!-- Tombol CTA Utama Navbar -->
+                    <button type="button" onclick="openBookingModal()"
+                        class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                        <i class="ph-bold ph-shopping-bag-open text-base mr-2"></i>
+                        Sewa Sekarang
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi"
+                        class="lg:hidden p-2.5 rounded-xl text-ivory-warm hover:bg-forest-secondary focus:outline-none cursor-pointer">
+                        <i class="ph-bold ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-forest-primary border-t border-forest-secondary/50 px-4 pt-3 pb-5 space-y-2">
+            <a href="#manfaat-produk" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Keunggulan</a>
+            <a href="#target-konsumen" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Target Konsumen</a>
+            <a href="#katalog-mini" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Katalog Satuan & Mini</a>
+            <a href="#rekomendasi-addon" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Rekomendasi Add-on</a>
+            <a href="#cara-sewa" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Cara Sewa</a>
+            <div class="pt-2">
+                <button type="button" onclick="openBookingModal()" class="mobile-nav-link flex items-center justify-center w-full px-4 py-3 rounded-xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow">
+                    <i class="ph-bold ph-shopping-bag-open text-lg mr-2"></i>
+                    Sewa Sekarang
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION (Background #F4F1DE)
+    ===================================================================== -->
+    <section class="relative overflow-hidden bg-ivory-warm pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-stone-200/80">
+        <!-- Decorative Topographic SVG Pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="topo-mini" width="120" height="120" patternUnits="userSpaceOnUse">
+                        <path d="M0 60 Q 30 30, 60 60 T 120 60" fill="none" stroke="#1B4332" stroke-width="1.5"/>
+                        <path d="M0 90 Q 30 60, 60 90 T 120 90" fill="none" stroke="#2D6A4F" stroke-width="1"/>
+                        <path d="M0 30 Q 30 0, 60 30 T 120 30" fill="none" stroke="#1B4332" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#topo-mini)"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Kolom Kiri: Copywriting & Tombol CTA -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Badge Harga Mulai -->
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-forest-secondary text-white shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-campfire-terracotta mr-2 animate-pulse"></span>
+                        Paket Sewa Perlengkapan Camping Mini • Mulai Rp 10.000/hari
+                    </div>
+
+                    <!-- Headline Utama -->
+                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-primary leading-tight">
+                        Sewa Alat Camping Satuan &amp; Paket Mini Sesuai Kebutuhanmu
+                    </h1>
+
+                    <!-- Deskripsi Produk -->
+                    <p class="text-base sm:text-lg text-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Paket penyewaan perlengkapan outdoor dengan harga terjangkau yang ditujukan kepada pelanggan yang ingin mencoba menyewa perlengkapan camping tanpa harus menyewa satu paket lengkap. Kamu bebas memilih perlengkapan tertentu sesuai kebutuhan melalui marketplace dan menyewanya langsung dari owner yang menyediakan produk tersebut.
+                    </p>
+
+                    <!-- Highlight CTA Quote -->
+                    <div class="bg-white/85 backdrop-blur-sm border-l-4 border-campfire-terracotta rounded-2xl p-4 sm:p-5 shadow-sm text-left">
+                        <p class="text-sm sm:text-base font-medium text-charcoal leading-relaxed">
+                            “Tidak perlu menyewa semua perlengkapan jika kamu hanya membutuhkan beberapa barang. Temukan perlengkapan camping sesuai kebutuhanmu dengan harga terjangkau!”
+                        </p>
+                    </div>
+
+                    <!-- Tombol CTA Hero: Lihat Perlengkapan & Sewa Sekarang -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#katalog-mini" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-forest-secondary hover:bg-forest-primary shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                            <i class="ph-bold ph-compass text-xl mr-2.5"></i>
+                            Lihat Perlengkapan
+                        </a>
+
+                        <button type="button" onclick="openBookingModal()" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            <i class="ph-bold ph-bag text-xl mr-2.5"></i>
+                            Sewa Sekarang
+                        </button>
+                    </div>
+
+                    <!-- Micro Trust Badges -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2 text-xs sm:text-sm text-charcoal/80 font-medium">
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Bisa Sewa Satuan / Eceran
+                        </span>
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Durasi Fleksibel 1–7 Hari
+                        </span>
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Berbagai Owner Terverifikasi
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Visual Interaktif "Rakit Paket Mini-mu Sendiri" -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-forest-primary via-forest-secondary to-campfire-terracotta rounded-3xl transform rotate-2 opacity-20 blur-sm"></div>
+                        
+                        <div class="relative bg-forest-primary text-ivory-warm rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/10 space-y-5">
+                            <!-- Header Kartu -->
+                            <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                                <div>
+                                    <span class="inline-block px-2.5 py-0.5 rounded-md bg-campfire-amber text-white text-[11px] font-bold uppercase tracking-wider mb-1">
+                                        Simulasi Paket Hemat
+                                    </span>
+                                    <h2 class="font-serif text-xl font-bold text-white">
+                                        Rakit Paket Mini-mu Sendiri
+                                    </h2>
+                                </div>
+                                <div class="w-11 h-11 rounded-2xl bg-forest-secondary flex items-center justify-center border border-white/15">
+                                    <i class="ph-fill ph-sparkle text-xl text-campfire-terracotta"></i>
+                                </div>
+                            </div>
+
+                            <!-- Contoh Kombinasi Item (Bisa dicentang interaktif!) -->
+                            <p class="text-xs text-ivory-warm/80">
+                                Centang item contoh di bawah untuk melihat estimasi tarif sewa harian super hemat:
+                            </p>
+
+                            <div class="space-y-2.5" id="hero-builder-list">
+                                <label class="flex items-center justify-between bg-white/10 hover:bg-white/15 p-3 rounded-2xl border border-white/10 cursor-pointer transition">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" checked data-price="30000" data-id="2" class="hero-mini-check w-4 h-4 rounded accent-campfire-terracotta cursor-pointer">
+                                        <div>
+                                            <p class="text-sm font-bold text-white">Tenda Dome Kapasitas 2P</p>
+                                            <p class="text-[11px] text-emerald-200">Double layer anti hujan</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-extrabold text-amber-300">Rp 30.000</span>
+                                </label>
+
+                                <label class="flex items-center justify-between bg-white/10 hover:bg-white/15 p-3 rounded-2xl border border-white/10 cursor-pointer transition">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" checked data-price="8000" data-id="3" class="hero-mini-check w-4 h-4 rounded accent-campfire-terracotta cursor-pointer">
+                                        <div>
+                                            <p class="text-sm font-bold text-white">Matras Spons Camping</p>
+                                            <p class="text-[11px] text-emerald-200">Alas penahan dingin tanah</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-extrabold text-amber-300">Rp 8.000</span>
+                                </label>
+
+                                <label class="flex items-center justify-between bg-white/10 hover:bg-white/15 p-3 rounded-2xl border border-white/10 cursor-pointer transition">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" checked data-price="7000" data-id="7" class="hero-mini-check w-4 h-4 rounded accent-campfire-terracotta cursor-pointer">
+                                        <div>
+                                            <p class="text-sm font-bold text-white">Lampu Tenda LED Gantung</p>
+                                            <p class="text-[11px] text-emerald-200">Terang & hemat baterai</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-extrabold text-amber-300">Rp 7.000</span>
+                                </label>
+                            </div>
+
+                            <!-- Total Estimasi & Badge Transparan -->
+                            <div class="bg-[#133124] rounded-2xl p-4 border border-white/10 space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-ivory-warm/80">Total Estimasi Paket Mini:</span>
+                                    <div class="text-right">
+                                        <span class="font-serif text-2xl font-extrabold text-white">
+                                            Rp <span id="hero-builder-total">45.000</span>
+                                        </span>
+                                        <span class="text-xs text-emerald-300">/hari</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-[11px] text-emerald-200 pt-2 border-t border-white/10">
+                                    <span class="flex items-center">
+                                        <i class="ph-fill ph-shield-check text-campfire-terracotta mr-1 text-sm"></i>
+                                        Transparan tanpa biaya tersembunyi
+                                    </span>
+                                    <button type="button" onclick="applyHeroMiniBundle()" class="font-bold text-campfire-terracotta hover:text-amber-300 underline cursor-pointer">
+                                        Pilih Paket Ini →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. TARGET KONSUMEN (5 SEGMEN DALAM GRID RESPONSIF)
+    ===================================================================== -->
+    <section id="target-konsumen" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary/15 text-forest-secondary mb-3">
+                    Cocok Untuk Siapa?
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Solusi Praktis untuk Berbagai Kebutuhan Petualang
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg">
+                    Kamu tidak harus selalu menyewa paket besar. Pilih perlengkapan satuan atau paket mini yang paling pas dengan rencana perjalananmu.
+                </p>
+            </div>
+
+            <!-- 5 Kartu Target Konsumen -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Target 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <i class="ph-bold ph-tent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Pemula Baru Camping</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pemula yang baru pertama kali mencoba kegiatan camping dan ingin menyewa perlengkapan dasar dengan biaya ringan.
+                    </p>
+                </div>
+
+                <!-- Target 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <i class="ph-bold ph-graduation-cap text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Pelajar &amp; Mahasiswa</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pelajar dan mahasiswa yang ingin mengadakan kegiatan outdoor atau makrab kampus secara patungan dan hemat.
+                    </p>
+                </div>
+
+                <!-- Target 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <i class="ph-bold ph-person-simple-hike text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Sudah Punya Sebagian Alat</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pendaki yang sudah memiliki carrier atau sleeping bag sendiri dan hanya perlu menyewa tenda atau kompor.
+                    </p>
+                </div>
+
+                <!-- Target 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <i class="ph-bold ph-plus-circle text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Butuh Alat Tambahan</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Orang yang hanya membutuhkan perlengkapan ekstra seperti kursi lipat, lampu tenda, atau matras tambahan.
+                    </p>
+                </div>
+
+                <!-- Target 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group sm:col-span-2 lg:col-span-1">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <i class="ph-bold ph-wallet text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Anggaran Terbatas</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pelanggan dengan anggaran penyewaan terbatas yang ingin tetap nyaman di alam tanpa membayar paket mahal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. MANFAAT PRODUK (5 POIN UTAMA DALAM KARTU BERSIH)
+    ===================================================================== -->
+    <section id="manfaat-produk" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-y border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Kolom Kiri -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-primary text-ivory-warm">
+                        Kenapa Pilih Paket Mini?
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary leading-tight">
+                        5 Manfaat Menyewa Perlengkapan Camping Secara Satuan &amp; Mini
+                    </h2>
+                    <p class="text-charcoal/85 text-base leading-relaxed">
+                        Kami merancang konsep Paket Sewa Perlengkapan Camping Mini agar kamu punya kendali penuh atas barang yang disewa dan biaya yang dikeluarkan.
+                    </p>
+
+                    <div class="bg-forest-primary text-ivory-warm rounded-2xl p-6 shadow-lg space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-campfire-terracotta flex items-center justify-center text-white">
+                                <i class="ph-bold ph-sparkle text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-white">Bayar Hanya yang Kamu Pakai</h3>
+                        </div>
+                        <p class="text-sm text-ivory-warm/85 leading-relaxed">
+                            Tidak ada lagi item mubazir di dalam tas. Kamu bisa memadukan tenda dari satu owner dengan kompor atau kursi lipat sesuai kebutuhan perjalananmu.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: 5 Kartu Manfaat -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Manfaat 1 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-lg shadow-sm">
+                            1
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Memberikan Pilihan Penyewaan dengan Harga Terjangkau
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Tarif sewa harian mulai dari Rp 7.000 – Rp 45.000 sehingga sangat ramah untuk kantong pelajar, mahasiswa, maupun pemula.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 2 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-lg shadow-sm">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Memudahkan Pelanggan Menyewa Perlengkapan Secara Satuan
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Bebas memilih 1 hingga beberapa item saja tanpa kewajiban mengambil paket full set yang harganya lebih tinggi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 3 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-lg shadow-sm">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Membantu Pelanggan yang Sudah Memiliki Sebagian Perlengkapan
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Cukup lengkapi item yang kurang—seperti menyewa matras, nesting masak, atau lampu tenda—agar perlengkapanmu lengkap.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 4 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-campfire-terracotta text-white font-bold flex items-center justify-center text-lg shadow-sm">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Memberikan Kesempatan Mencoba Layanan Marketplace
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Pengalaman transaksi pertama yang ringan dan transparan untuk merasakan kemudahan menyewa alat outdoor secara online.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 5 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-campfire-amber text-white font-bold flex items-center justify-center text-lg shadow-sm">
+                            5
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Memperkenalkan Produk-Produk dari Berbagai Owner
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Jelajahi beragam pilihan peralatan terawat dari mitra owner terpercaya di berbagai area pengambilan terdekat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. KATALOG PERLENGKAPAN SATUAN & PAKET MINI INTERAKTIF
+    ===================================================================== -->
+    <section id="katalog-mini" class="scroll-mt-16 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header Katalog & Kontrol Durasi Tampilan Harga -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                        Katalog Satuan &amp; Paket Mini
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary">
+                        Pilih Perlengkapan Camping Sesuai Kebutuhanmu
+                    </h2>
+                    <p class="text-charcoal/80 text-base mt-2">
+                        Harga sewa dan durasi ditampilkan secara jelas. Klik <strong>+ Tambah ke Paket</strong> atau <strong>Sewa Sekarang</strong> untuk langsung memesan.
+                    </p>
+                </div>
+
+                <!-- Pilihan Simulasi Durasi Sewa Cepat di Katalog -->
+                <div class="bg-white p-3 rounded-2xl border border-stone-200 shadow-sm flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-bold text-charcoal/75 px-2">Tampilkan Tarif Untuk:</span>
+                    <button type="button" data-duration="1" class="duration-pill active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-forest-primary text-white transition cursor-pointer">
+                        1 Hari (24 Jam)
+                    </button>
+                    <button type="button" data-duration="2" class="duration-pill px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-ivory-warm text-charcoal hover:bg-stone-200 transition cursor-pointer">
+                        2 Hari (Weekend)
+                    </button>
+                    <button type="button" data-duration="3" class="duration-pill px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-ivory-warm text-charcoal hover:bg-stone-200 transition cursor-pointer">
+                        3 Hari (2 Malam)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Kategori -->
+            <div id="category-filters" class="flex flex-wrap gap-2 mb-8">
+                <button type="button" data-category="Semua" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-forest-secondary text-white shadow-sm transition cursor-pointer">
+                    Semua Perlengkapan
+                </button>
+                <button type="button" data-category="Paket Mini Hemat" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-charcoal hover:bg-forest-secondary/10 border border-stone-200 transition cursor-pointer">
+                    Paket Mini Hemat
+                </button>
+                <button type="button" data-category="Tenda & Shelter" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-charcoal hover:bg-forest-secondary/10 border border-stone-200 transition cursor-pointer">
+                    Tenda &amp; Shelter
+                </button>
+                <button type="button" data-category="Tidur & Matras" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-charcoal hover:bg-forest-secondary/10 border border-stone-200 transition cursor-pointer">
+                    Tidur &amp; Matras
+                </button>
+                <button type="button" data-category="Masak & Logistik" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-charcoal hover:bg-forest-secondary/10 border border-stone-200 transition cursor-pointer">
+                    Masak &amp; Logistik
+                </button>
+                <button type="button" data-category="Penerangan & Aksesoris" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-charcoal hover:bg-forest-secondary/10 border border-stone-200 transition cursor-pointer">
+                    Penerangan &amp; Aksesoris
+                </button>
+            </div>
+
+            <!-- Grid Kartu Produk Katalog (9 Item) -->
+            <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Diisi dinamis oleh JavaScript -->
+            </div>
+
+            <!-- =====================================================================
+                 SMART ADD-ON RECOMMENDATION BAR (Rekomendasi Tambahan Relevan)
+            ===================================================================== -->
+            <div id="rekomendasi-addon" class="scroll-mt-24 mt-14 bg-ivory-warm rounded-3xl p-6 sm:p-8 border-2 border-forest-secondary/30 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-campfire-amber text-white mb-2">
+                            <i class="ph-bold ph-sparkle mr-1.5"></i>
+                            Rekomendasi Tambahan Relevan
+                        </span>
+                        <h3 id="addon-section-title" class="font-serif text-xl sm:text-2xl font-bold text-forest-primary">
+                            Lengkapi Perjalananmu dengan Add-On Hemat Mulai Rp 7.000
+                        </h3>
+                        <p id="addon-section-subtitle" class="text-sm text-charcoal/80 mt-1">
+                            Sering ditambahkan oleh penyewa paket mini agar aktivitas memasak dan tidur di alam terbuka lebih nyaman.
+                        </p>
+                    </div>
+                    <button type="button" onclick="openBookingModal()" class="self-start md:self-center px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-forest-primary hover:bg-forest-secondary transition cursor-pointer">
+                        Lihat Paketku (<span id="addon-bar-count">0</span> Item)
+                    </button>
+                </div>
+
+                <!-- Grid 3 Rekomendasi Add-on -->
+                <div id="smart-addon-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Diisi dinamis oleh JavaScript -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. ALUR PENYEWAAN MUDAH (4 LANGKAH TRANSAKSI PERTAMA)
+    ===================================================================== -->
+    <section id="cara-sewa" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-t border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                    Proses Cepat &amp; Transparan
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    4 Langkah Mudah Menyewa Perlengkapan Camping Pertamamu
+                </h2>
+                <p class="text-charcoal/80 text-base">
+                    Dirancang agar pengunjung pertama kali bisa langsung memilih alat, mengecek total biaya secara transparan, dan melakukan pemesanan tanpa ribet.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Langkah 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm relative">
+                    <div class="w-10 h-10 rounded-xl bg-forest-primary text-white font-bold flex items-center justify-center mb-4">1</div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Pilih Alat Satuan / Paket Mini</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pilih perlengkapan tertentu yang kamu butuhkan saja dari berbagai owner terpercaya di katalog.
+                    </p>
+                </div>
+
+                <!-- Langkah 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm relative">
+                    <div class="w-10 h-10 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center mb-4">2</div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Atur Durasi Sewa</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Tentukan lama penyewaan (1 hingga 7 hari) dan lihat kalkulasi biaya sewa secara otomatis dan jelas.
+                    </p>
+                </div>
+
+                <!-- Langkah 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm relative">
+                    <div class="w-10 h-10 rounded-xl bg-campfire-amber text-white font-bold flex items-center justify-center mb-4">3</div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Cek Rekomendasi Tambahan</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Tambahkan item pelengkap yang relevan seperti lampu tenda, matras, atau kompor mini bila diperlukan.
+                    </p>
+                </div>
+
+                <!-- Langkah 4 -->
+                <div class="bg-white p-6 rounded-2xl border-2 border-campfire-terracotta shadow-sm relative">
+                    <div class="w-10 h-10 rounded-xl bg-campfire-terracotta text-white font-bold flex items-center justify-center mb-4">4</div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Checkout Transaksi Pertama</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Isi jadwal pengambilan dan konfirmasi pesanan untuk langsung terhubung dengan mitra owner alat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. SECTION CALL TO ACTION (CTA) PENUTUP
+    ===================================================================== -->
+    <section class="py-16 lg:py-20 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl bg-forest-primary text-ivory-warm p-8 sm:p-12 lg:p-14 overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+                    <span class="inline-block px-4 py-1 rounded-full bg-forest-secondary text-xs font-bold uppercase tracking-wider text-emerald-200">
+                        Hemat, Fleksibel &amp; Tanpa Ribet
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                        Tidak perlu menyewa semua perlengkapan jika kamu hanya membutuhkan beberapa barang.
+                    </h2>
+                    <p class="text-base sm:text-lg text-ivory-warm/90 leading-relaxed">
+                        Temukan perlengkapan camping sesuai kebutuhanmu dengan harga terjangkau!
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <a href="#katalog-mini" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-forest-secondary hover:bg-emerald-700 border border-white/15 shadow transition-all duration-200">
+                            <i class="ph-bold ph-compass text-xl mr-2"></i>
+                            Lihat Perlengkapan
+                        </a>
+                        <button type="button" onclick="openBookingModal()" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition-all duration-200 cursor-pointer">
+                            <i class="ph-bold ph-bag text-xl mr-2"></i>
+                            Sewa Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. FOOTER (#1B4332)
+    ===================================================================== -->
+    <footer class="bg-forest-primary text-ivory-warm border-t border-forest-secondary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+                
+                <!-- Brand & Deskripsi -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15">
+                            <i class="ph-fill ph-tent text-xl text-ivory-warm"></i>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-lg text-white">
+                                Penyewaan Alat Outdoor dan Camping
+                            </span>
+                            <span class="text-xs text-campfire-terracotta font-bold uppercase tracking-wider">Paket Sewa Camping Mini</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-ivory-warm/80 leading-relaxed max-w-md">
+                        Marketplace penyewaan perlengkapan outdoor dan camping satuan maupun paket mini dengan tarif terjangkau dari berbagai owner terverifikasi.
+                    </p>
+                </div>
+
+                <!-- Navigasi -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li><a href="#manfaat-produk" class="hover:text-campfire-terracotta transition-colors">Keunggulan Paket Mini</a></li>
+                        <li><a href="#target-konsumen" class="hover:text-campfire-terracotta transition-colors">Target Pengguna</a></li>
+                        <li><a href="#katalog-mini" class="hover:text-campfire-terracotta transition-colors">Katalog Perlengkapan</a></li>
+                        <li><a href="#cara-sewa" class="hover:text-campfire-terracotta transition-colors">Cara Menyewa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kategori Sewa -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Pilihan Sewa Populer</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li>Paket Mini Solo &amp; Berdua (Mulai Rp 45.000/hari)</li>
+                        <li>Sewa Tenda Dome 2P &amp; Matras Spons</li>
+                        <li>Sewa Kompor Portable Mini &amp; Nesting</li>
+                        <li>Sewa Sleeping Bag Polar &amp; Lampu Tenda LED</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory-warm/70 gap-4">
+                <p>&copy; 2026 Penyewaan Alat Outdoor dan Camping. Seluruh Hak Cipta Dilindungi.</p>
+                <p>Sewa cerdas sesuai kebutuhan, hemat anggaran petualanganmu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         FLOATING CART BAR MOBILE/DESKTOP (Muncul saat ada item di keranjang)
+    ===================================================================== -->
+    <div id="floating-cart-bar" class="hidden fixed bottom-4 inset-x-4 sm:inset-x-auto sm:right-6 sm:bottom-6 z-30 bg-forest-primary text-ivory-warm rounded-2xl p-4 shadow-2xl border border-forest-secondary max-w-md">
+        <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-forest-secondary flex items-center justify-center text-amber-300">
+                    <i class="ph-fill ph-backpack text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-emerald-200 font-semibold">
+                        <span id="floating-cart-count">0</span> Item Terpilih (<span id="floating-cart-days">1</span> Hari)
+                    </p>
+                    <p class="font-extrabold text-base text-white">
+                        Rp <span id="floating-cart-total">0</span>
+                    </p>
+                </div>
+            </div>
+            <button type="button" onclick="openBookingModal()" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow transition cursor-pointer">
+                Sewa Sekarang →
+            </button>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL PEMESANAN / KERANJANG PAKET MINI INTERAKTIF ("Sewa Sekarang")
+    ===================================================================== -->
+    <div id="booking-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-stone-200 my-auto">
+            <!-- Header Modal -->
+            <div class="bg-forest-primary text-ivory-warm px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-campfire-terracotta">Marketplace Checkout</span>
+                    <h3 class="font-serif text-xl font-bold text-white">Rincian Paket Sewa Camping Mini</h3>
+                </div>
+                <button type="button" id="close-booking-modal" class="p-2 rounded-xl text-ivory-warm hover:bg-forest-secondary transition cursor-pointer">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Body Modal -->
+            <div class="p-6 max-h-[80vh] overflow-y-auto space-y-6">
+                
+                <!-- 1. Daftar Item Dipilih -->
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-sm text-forest-primary">Perlengkapan yang Kamu Pilih:</h4>
+                        <button type="button" id="clear-cart-btn" class="text-xs font-semibold text-campfire-hover hover:underline cursor-pointer">
+                            Kosongkan Pilihan
+                        </button>
+                    </div>
+                    <div id="modal-cart-items" class="space-y-2.5">
+                        <!-- Item keranjang dirender via JS -->
+                    </div>
+                </div>
+
+                <!-- 2. Rekomendasi Produk Tambahan di Dalam Modal -->
+                <div class="bg-ivory-warm p-4 rounded-2xl border border-stone-200 space-y-3">
+                    <p class="text-xs font-bold text-forest-primary flex items-center">
+                        <i class="ph-fill ph-sparkle text-campfire-amber mr-1.5 text-sm"></i>
+                        Rekomendasi Produk Tambahan yang Relevan:
+                    </p>
+                    <div id="modal-addon-suggestions" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <!-- Add-on dirender via JS -->
+                    </div>
+                </div>
+
+                <!-- 3. Pengaturan Durasi & Form Data Penyewa -->
+                <form id="modal-checkout-form" class="space-y-4 pt-2 border-t border-stone-200">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                            <label for="modal-rent-days" class="block text-xs font-bold text-charcoal mb-1">Durasi Sewa (Hari)</label>
+                            <select id="modal-rent-days" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                                <option value="1">1 Hari (24 Jam)</option>
+                                <option value="2">2 Hari (Weekend)</option>
+                                <option value="3">3 Hari (2 Malam)</option>
+                                <option value="4">4 Hari</option>
+                                <option value="5">5 Hari</option>
+                                <option value="7">7 Hari (1 Minggu)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="modal-pickup-date" class="block text-xs font-bold text-charcoal mb-1">Tanggal Ambil</label>
+                            <input type="date" id="modal-pickup-date" required class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                        <div>
+                            <label for="modal-renter-whatsapp" class="block text-xs font-bold text-charcoal mb-1">Nomor WhatsApp</label>
+                            <input type="tel" id="modal-renter-whatsapp" required placeholder="0812xxxxxxxx" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="modal-renter-name" class="block text-xs font-bold text-charcoal mb-1">Nama Lengkap Penyewa</label>
+                        <input type="text" id="modal-renter-name" required placeholder="Masukkan nama lengkapmu" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                    </div>
+
+                    <!-- Ringkasan Total Harga -->
+                    <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-xs font-semibold text-forest-secondary">Total Estimasi Biaya Sewa</span>
+                            <span class="text-[11px] text-charcoal/70">Sudah termasuk durasi <strong id="modal-summary-days">1</strong> hari sewa</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-serif text-2xl font-extrabold text-forest-primary">
+                                Rp <span id="modal-grand-total">0</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="modal-submit-btn" class="w-full py-4 px-6 rounded-xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition cursor-pointer">
+                        Konfirmasi Sewa Sekarang
+                    </button>
+                </form>
+
+                <!-- Notifikasi Sukses Transaksi Pertama -->
+                <div id="modal-checkout-success" class="hidden bg-emerald-50 border border-emerald-300 rounded-2xl p-6 text-center space-y-3">
+                    <div class="w-14 h-14 rounded-full bg-forest-secondary text-white mx-auto flex items-center justify-center">
+                        <i class="ph-bold ph-check text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-forest-primary">
+                        Permintaan Sewa Berhasil Dibuat!
+                    </h4>
+                    <p id="modal-success-details" class="text-xs sm:text-sm text-charcoal/85 leading-relaxed"></p>
+                    <button type="button" id="modal-reset-after-success" class="mt-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-forest-primary hover:bg-forest-secondary transition cursor-pointer">
+                        Pilih Perlengkapan Lainnya
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         TOAST NOTIFICATION (Umpan balik instan saat item ditambahkan)
+    ===================================================================== -->
+    <div id="toast-notification" class="hidden fixed top-24 right-4 z-50 bg-forest-primary text-ivory-warm px-4 py-3 rounded-2xl shadow-xl border border-forest-secondary flex items-center space-x-2.5 text-xs sm:text-sm font-semibold">
+        <i class="ph-fill ph-check-circle text-campfire-terracotta text-lg"></i>
+        <span id="toast-message">Item ditambahkan ke paket sewamu!</span>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT LOGIKA KATALOG, SMART ADD-ON & KERANJANG SEWA
+    ===================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Data 9 Perlengkapan Satuan & Paket Mini dari Berbagai Owner
+            const products = [
+                {
+                    id: 1,
+                    name: "Paket Mini Solo / Berdua Hemat",
+                    category: "Paket Mini Hemat",
+                    pricePerDay: 45000,
+                    owner: "Rimba Camp Gear • Bandung",
+                    rating: "4.9 (142 sewa)",
+                    badge: "Paling Laris",
+                    icon: "ph-tent",
+                    desc: "Paket ringkas berisi 1 Tenda Dome 2P Double Layer, 2 Matras Spons, dan 1 Lampu Tenda LED. Cocok untuk pemula.",
+                    recommendedAddons: [5, 4, 8]
+                },
+                {
+                    id: 2,
+                    name: "Tenda Dome Kapasitas 2 Orang (Double Layer)",
+                    category: "Tenda & Shelter",
+                    pricePerDay: 30000,
+                    owner: "Puncak Outdoor Rent • Lembang",
+                    rating: "4.9 (98 sewa)",
+                    badge: "Sewa Satuan",
+                    icon: "ph-tent",
+                    desc: "Tenda ringan anti hujan deras dengan flysheet waterproof dan pasak lengkap. Ideal jika kamu sudah punya matras & sleeping bag.",
+                    recommendedAddons: [3, 7, 4]
+                },
+                {
+                    id: 3,
+                    name: "Matras Spons / Aluminium Foil Camping",
+                    category: "Tidur & Matras",
+                    pricePerDay: 8000,
+                    owner: "Jejak Alam Store • Dago",
+                    rating: "4.8 (115 sewa)",
+                    badge: "Mulai 8rb",
+                    icon: "ph-bed",
+                    desc: "Alas tidur empuk sekaligus penahan hawa dingin dari permukaan tanah. Ringan digulung dan mudah diikat di tas.",
+                    recommendedAddons: [4, 7, 2]
+                },
+                {
+                    id: 4,
+                    name: "Sleeping Bag Polar Tebal & Hangat",
+                    category: "Tidur & Matras",
+                    pricePerDay: 15000,
+                    owner: "Rimba Camp Gear • Bandung",
+                    rating: "4.9 (164 sewa)",
+                    badge: "Higienis",
+                    icon: "ph-moon-stars",
+                    desc: "Kantong tidur berbahan polar lembut yang menjaga kehangatan tubuh di suhu pegunungan. Selalu dicuci bersih setiap selesai sewa.",
+                    recommendedAddons: [3, 7, 8]
+                },
+                {
+                    id: 5,
+                    name: "Kompor Portable Windproof Mini",
+                    category: "Masak & Logistik",
+                    pricePerDay: 15000,
+                    owner: "Basecamp Adventure • Cimahi",
+                    rating: "4.8 (89 sewa)",
+                    badge: "Anti Angin",
+                    icon: "ph-fire",
+                    desc: "Kompor lapangan lipat dengan pelindung angin (windproof) dan pemantik otomatis. Praktis untuk menyeduh kopi dan memasak mie.",
+                    recommendedAddons: [6, 8, 7]
+                },
+                {
+                    id: 6,
+                    name: "Nesting Cookset (Set Panci & Wajan Lapangan)",
+                    category: "Masak & Logistik",
+                    pricePerDay: 12000,
+                    owner: "Basecamp Adventure • Cimahi",
+                    rating: "4.7 (76 sewa)",
+                    badge: "Lengkap",
+                    icon: "ph-cooking-pot",
+                    desc: "Satu set peralatan masak aluminium ringkas berisi panci, wajan penggorengan mini, dan mangkuk untuk 2–3 orang.",
+                    recommendedAddons: [5, 8, 7]
+                },
+                {
+                    id: 7,
+                    name: "Lampu Tenda LED Gantung + Headlamp",
+                    category: "Penerangan & Aksesoris",
+                    pricePerDay: 7000,
+                    owner: "Jejak Alam Store • Dago",
+                    rating: "4.9 (130 sewa)",
+                    badge: "Super Hemat",
+                    icon: "ph-flashlight",
+                    desc: "Lentera LED gantung untuk penerangan di dalam tenda sekaligus headlamp praktis untuk berjalan di malam hari.",
+                    recommendedAddons: [3, 4, 8]
+                },
+                {
+                    id: 8,
+                    name: "Kursi Lipat Outdoor Ultralight",
+                    category: "Penerangan & Aksesoris",
+                    pricePerDay: 15000,
+                    owner: "Puncak Outdoor Rent • Lembang",
+                    rating: "4.9 (104 sewa)",
+                    badge: "Favorit Santai",
+                    icon: "ph-chair",
+                    desc: "Kursi lipat rangka aluminium kokoh mampu menahan beban hingga 100 kg. Sangat nyaman untuk bersantai di depan tenda.",
+                    recommendedAddons: [5, 7, 6]
+                },
+                {
+                    id: 9,
+                    name: "Tas Carrier 45L + Rain Cover",
+                    category: "Tenda & Shelter",
+                    pricePerDay: 25000,
+                    owner: "Rimba Camp Gear • Bandung",
+                    rating: "4.8 (91 sewa)",
+                    badge: "Ergonomis",
+                    icon: "ph-backpack",
+                    desc: "Tas gunung kapasitas 45 liter yang pas untuk membawa perlengkapan camping 1–2 malam, lengkap dengan pelindung hujan.",
+                    recommendedAddons: [4, 3, 7]
+                }
+            ];
+
+            // State Aplikasi
+            let selectedCategory = 'Semua';
+            let previewDuration = 1;
+            let cart = []; // [{ productId, qty }]
+            let lastInteractedProductId = 1;
+
+            // Elemen DOM
+            const catalogGrid = document.getElementById('catalog-grid');
+            const smartAddonGrid = document.getElementById('smart-addon-grid');
+            const addonTitle = document.getElementById('addon-section-title');
+            const addonSubtitle = document.getElementById('addon-section-subtitle');
+
+            // 3. Hero Interactive Mini Bundle Calculator
+            const heroCheckboxes = document.querySelectorAll('.hero-mini-check');
+            const heroTotalEl = document.getElementById('hero-builder-total');
+
+            function updateHeroBuilderTotal() {
+                let total = 0;
+                heroCheckboxes.forEach(cb => {
+                    if (cb.checked) total += parseInt(cb.dataset.price, 10);
+                });
+                heroTotalEl.textContent = total.toLocaleString('id-ID');
+            }
+
+            heroCheckboxes.forEach(cb => cb.addEventListener('change', updateHeroBuilderTotal));
+
+            window.applyHeroMiniBundle = function() {
+                let addedCount = 0;
+                heroCheckboxes.forEach(cb => {
+                    if (cb.checked) {
+                        const prodId = parseInt(cb.dataset.id, 10);
+                        addToCart(prodId, false);
+                        addedCount++;
+                    }
+                });
+                if (addedCount > 0) {
+                    openBookingModal();
+                } else {
+                    showToast('Pilih minimal satu item pada simulasi paket mini.');
+                }
+            };
+
+            // 4. Render Katalog Produk
+            function renderCatalog() {
+                const filtered = selectedCategory === 'Semua'
+                    ? products
+                    : products.filter(p => p.category === selectedCategory);
+
+                catalogGrid.innerHTML = filtered.map(item => {
+                    const displayPrice = item.pricePerDay * previewDuration;
+                    const durationLabel = previewDuration === 1 ? '/hari' : `/${previewDuration} hari`;
+                    const inCartItem = cart.find(c => c.productId === item.id);
+
+                    return `
+                        <div class="bg-white rounded-3xl border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                            <div>
+                                <!-- Visual Header Kartu -->
+                                <div class="relative h-44 bg-gradient-to-br from-ivory-warm to-emerald-50 flex items-center justify-center p-6 border-b border-stone-100">
+                                    <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-forest-secondary text-white shadow-sm">
+                                        ${item.category}
+                                    </span>
+                                    <span class="absolute top-4 right-4 px-2.5 py-1 rounded-lg text-xs font-bold bg-white/95 text-forest-primary border border-stone-200">
+                                        ${item.badge}
+                                    </span>
+                                    <div class="w-20 h-20 rounded-2xl bg-white shadow-sm border border-stone-200/70 flex items-center justify-center text-forest-primary group-hover:scale-110 group-hover:text-campfire-terracotta transition-all duration-300">
+                                        <i class="ph-duotone ${item.icon} text-4xl"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Detail Info Produk -->
+                                <div class="p-6 space-y-2.5">
+                                    <div class="flex items-center justify-between text-xs text-charcoal/70">
+                                        <span class="font-medium truncate pr-2">${item.owner}</span>
+                                        <span class="font-bold text-amber-600 flex-shrink-0">★ ${item.rating}</span>
+                                    </div>
+                                    <h3 class="font-bold text-lg text-forest-primary leading-snug">
+                                        ${item.name}
+                                    </h3>
+                                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                                        ${item.desc}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Footer Harga, Durasi & Tombol Pemesanan -->
+                            <div class="px-6 pb-6 pt-3 border-t border-stone-100 space-y-3">
+                                <div class="flex items-end justify-between">
+                                    <div>
+                                        <span class="block text-[11px] font-semibold text-charcoal/65">Tarif Sewa (${previewDuration} Hari):</span>
+                                        <span class="font-extrabold text-xl text-forest-primary">
+                                            Rp ${displayPrice.toLocaleString('id-ID')}
+                                        </span>
+                                        <span class="text-xs font-medium text-charcoal/70">${durationLabel}</span>
+                                    </div>
+                                    <span class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-forest-secondary">
+                                        Tersedia
+                                    </span>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2.5">
+                                    <button type="button" onclick="addToCart(${item.id}, true)"
+                                        class="py-2.5 px-3 rounded-xl text-xs font-bold text-forest-primary bg-ivory-warm hover:bg-stone-200 border border-stone-300 transition flex items-center justify-center cursor-pointer">
+                                        <i class="ph-bold ph-plus mr-1"></i>
+                                        ${inCartItem ? `Di Paket (${inCartItem.qty})` : 'Tambah Paket'}
+                                    </button>
+                                    <button type="button" onclick="rentNowSingle(${item.id})"
+                                        class="py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-sm transition flex items-center justify-center cursor-pointer">
+                                        Sewa Sekarang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // 5. Render Smart Add-On Recommendations
+            function renderSmartAddons() {
+                const refProduct = products.find(p => p.id === lastInteractedProductId) || products[0];
+                const addonIds = refProduct.recommendedAddons || [3, 5, 7];
+                const addonProducts = addonIds
+                    .map(id => products.find(p => p.id === id))
+                    .filter(Boolean);
+
+                if (cart.length > 0) {
+                    const lastCartItem = products.find(p => p.id === cart[cart.length - 1].productId);
+                    if (lastCartItem) {
+                        addonTitle.textContent = `Rekomendasi Tambahan Relevan untuk "${lastCartItem.name}"`;
+                        addonSubtitle.textContent = `Lengkapi perlengkapan yang sudah kamu pilih dengan item pendukung hemat di bawah ini:`;
+                    }
+                }
+
+                smartAddonGrid.innerHTML = addonProducts.map(addon => `
+                    <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-forest-primary flex items-center justify-center flex-shrink-0">
+                                <i class="ph-duotone ${addon.icon} text-2xl"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-sm text-forest-primary truncate">${addon.name}</h4>
+                                <p class="text-xs text-campfire-hover font-extrabold">
+                                    + Rp ${addon.pricePerDay.toLocaleString('id-ID')}/hari
+                                </p>
+                            </div>
+                        </div>
+                        <button type="button" onclick="addToCart(${addon.id}, true)"
+                            class="flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-forest-secondary hover:bg-forest-primary transition cursor-pointer">
+                            + Tambah
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            // Event Listener Filter Kategori
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cat-btn').forEach(b => {
+                        b.classList.remove('bg-forest-secondary', 'text-white', 'shadow-sm', 'font-bold');
+                        b.classList.add('bg-white', 'text-charcoal', 'border', 'border-stone-200', 'font-semibold');
+                    });
+                    btn.classList.remove('bg-white', 'text-charcoal', 'border', 'border-stone-200', 'font-semibold');
+                    btn.classList.add('bg-forest-secondary', 'text-white', 'shadow-sm', 'font-bold');
+                    selectedCategory = btn.dataset.category;
+                    renderCatalog();
+                });
+            });
+
+            // Event Listener Durasi Cepat Katalog
+            document.querySelectorAll('.duration-pill').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    document.querySelectorAll('.duration-pill').forEach(p => {
+                        p.classList.remove('bg-forest-primary', 'text-white', 'font-bold');
+                        p.classList.add('bg-ivory-warm', 'text-charcoal', 'font-semibold');
+                    });
+                    pill.classList.remove('bg-ivory-warm', 'text-charcoal', 'font-semibold');
+                    pill.classList.add('bg-forest-primary', 'text-white', 'font-bold');
+                    previewDuration = parseInt(pill.dataset.duration, 10);
+                    document.getElementById('modal-rent-days').value = String(previewDuration);
+                    renderCatalog();
+                    updateCartUI();
+                });
+            });
+
+            // 6. Logika Keranjang & Pemesanan
+            window.addToCart = function(productId, notify = true) {
+                lastInteractedProductId = productId;
+                const existing = cart.find(item => item.productId === productId);
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({ productId, qty: 1 });
+                }
+
+                const prod = products.find(p => p.id === productId);
+                if (notify && prod) {
+                    showToast(`"${prod.name}" ditambahkan ke paket sewamu.`);
+                }
+
+                renderCatalog();
+                renderSmartAddons();
+                updateCartUI();
+            };
+
+            window.rentNowSingle = function(productId) {
+                lastInteractedProductId = productId;
+                const existing = cart.find(item => item.productId === productId);
+                if (!existing) {
+                    cart.push({ productId, qty: 1 });
+                }
+                renderCatalog();
+                renderSmartAddons();
+                updateCartUI();
+                openBookingModal();
+            };
+
+            window.updateItemQty = function(productId, delta) {
+                const idx = cart.findIndex(item => item.productId === productId);
+                if (idx === -1) return;
+
+                cart[idx].qty += delta;
+                if (cart[idx].qty <= 0) {
+                    cart.splice(idx, 1);
+                }
+
+                renderCatalog();
+                renderSmartAddons();
+                updateCartUI();
+            };
+
+            function getRentalDays() {
+                return parseInt(document.getElementById('modal-rent-days').value, 10) || 1;
+            }
+
+            function updateCartUI() {
+                const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+                const days = getRentalDays();
+                const dailySubtotal = cart.reduce((sum, item) => {
+                    const p = products.find(prod => prod.id === item.productId);
+                    return sum + (p ? p.pricePerDay * item.qty : 0);
+                }, 0);
+                const grandTotal = dailySubtotal * days;
+
+                // Update Badges & Floating Bar
+                document.getElementById('nav-cart-badge').textContent = totalQty;
+                document.getElementById('addon-bar-count').textContent = totalQty;
+
+                const floatingBar = document.getElementById('floating-cart-bar');
+                if (totalQty > 0) {
+                    floatingBar.classList.remove('hidden');
+                    document.getElementById('floating-cart-count').textContent = totalQty;
+                    document.getElementById('floating-cart-days').textContent = days;
+                    document.getElementById('floating-cart-total').textContent = grandTotal.toLocaleString('id-ID');
+                } else {
+                    floatingBar.classList.add('hidden');
+                }
+
+                // Render Modal Cart Items
+                const modalItemsEl = document.getElementById('modal-cart-items');
+                if (cart.length === 0) {
+                    modalItemsEl.innerHTML = `
+                        <div class="text-center py-6 bg-ivory-clean rounded-2xl border border-dashed border-stone-300 space-y-2">
+                            <p class="text-sm font-semibold text-charcoal/75">Belum ada perlengkapan yang dipilih.</p>
+                            <p class="text-xs text-charcoal/60">Pilih item dari rekomendasi di bawah atau jelajahi katalog alat satuan.</p>
+                        </div>
+                    `;
+                } else {
+                    modalItemsEl.innerHTML = cart.map(item => {
+                        const p = products.find(prod => prod.id === item.productId);
+                        if (!p) return '';
+                        const itemSubtotal = p.pricePerDay * item.qty * days;
+                        return `
+                            <div class="flex items-center justify-between bg-ivory-clean p-3.5 rounded-2xl border border-stone-200 gap-3">
+                                <div class="min-w-0">
+                                    <p class="font-bold text-sm text-forest-primary truncate">${p.name}</p>
+                                    <p class="text-xs text-charcoal/70">
+                                        ${p.owner} • Rp ${p.pricePerDay.toLocaleString('id-ID')}/hari
+                                    </p>
+                                </div>
+                                <div class="flex items-center space-x-3 flex-shrink-0">
+                                    <div class="flex items-center bg-white border border-stone-300 rounded-xl overflow-hidden">
+                                        <button type="button" onclick="updateItemQty(${p.id}, -1)" class="px-2.5 py-1 text-xs font-bold hover:bg-stone-100 cursor-pointer">-</button>
+                                        <span class="px-2.5 py-1 text-xs font-extrabold text-forest-primary">${item.qty}</span>
+                                        <button type="button" onclick="updateItemQty(${p.id}, 1)" class="px-2.5 py-1 text-xs font-bold hover:bg-stone-100 cursor-pointer">+</button>
+                                    </div>
+                                    <span class="font-extrabold text-sm text-forest-primary w-24 text-right">
+                                        Rp ${itemSubtotal.toLocaleString('id-ID')}
+                                    </span>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                // Render Modal Addon Suggestions (yang belum ada di keranjang)
+                const modalAddonsEl = document.getElementById('modal-addon-suggestions');
+                const availableAddons = products
+                    .filter(p => !cart.some(c => c.productId === p.id))
+                    .slice(0, 4);
+
+                modalAddonsEl.innerHTML = availableAddons.map(addon => `
+                    <div class="bg-white p-2.5 rounded-xl border border-stone-200 flex items-center justify-between gap-2">
+                        <div class="min-w-0">
+                            <p class="font-bold text-xs text-charcoal truncate">${addon.name}</p>
+                            <p class="text-[11px] font-bold text-campfire-hover">Rp ${addon.pricePerDay.toLocaleString('id-ID')}/hari</p>
+                        </div>
+                        <button type="button" onclick="addToCart(${addon.id}, false)"
+                            class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold text-white bg-forest-secondary hover:bg-forest-primary flex-shrink-0 cursor-pointer">
+                            + Tambah
+                        </button>
+                    </div>
+                `).join('');
+
+                // Update Totals di Modal
+                document.getElementById('modal-summary-days').textContent = days;
+                document.getElementById('modal-grand-total').textContent = grandTotal.toLocaleString('id-ID');
+            }
+
+            // 7. Kontrol Modal Pemesanan
+            const bookingModal = document.getElementById('booking-modal');
+            const checkoutForm = document.getElementById('modal-checkout-form');
+            const checkoutSuccess = document.getElementById('modal-checkout-success');
+
+            // Default tanggal ambil besok
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('modal-pickup-date').value = tomorrow.toISOString().split('T')[0];
+
+            window.openBookingModal = function() {
+                // Jika keranjang masih kosong saat user klik "Sewa Sekarang", masukkan 1 paket mini rekomendasi agar langsung terlihat
+                if (cart.length === 0) {
+                    cart.push({ productId: 1, qty: 1 });
+                    renderCatalog();
+                }
+                updateCartUI();
+                checkoutForm.classList.remove('hidden');
+                checkoutSuccess.classList.add('hidden');
+                bookingModal.classList.remove('hidden');
+            };
+
+            document.getElementById('close-booking-modal').addEventListener('click', () => {
+                bookingModal.classList.add('hidden');
+            });
+
+            document.getElementById('clear-cart-btn').addEventListener('click', () => {
+                cart = [];
+                renderCatalog();
+                updateCartUI();
+            });
+
+            document.getElementById('modal-rent-days').addEventListener('change', () => {
+                updateCartUI();
+            });
+
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (cart.length === 0) {
+                    showToast('Silakan pilih minimal 1 perlengkapan camping terlebih dahulu.');
+                    return;
+                }
+
+                const renterName = document.getElementById('modal-renter-name').value.trim();
+                const pickupDate = document.getElementById('modal-pickup-date').value;
+                const days = getRentalDays();
+                const grandTotal = document.getElementById('modal-grand-total').textContent;
+                const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+
+                document.getElementById('modal-success-details').innerHTML = `
+                    Terima kasih, <strong>${renterName}</strong>! Pesanan sewa <strong>${itemCount} unit perlengkapan camping</strong> untuk tanggal ambil <strong>${pickupDate}</strong> selama <strong>${days} hari</strong> (Total: <strong>Rp ${grandTotal}</strong>) telah diteruskan ke mitra owner terkait.
+                `;
+
+                checkoutForm.classList.add('hidden');
+                checkoutSuccess.classList.remove('hidden');
+            });
+
+            document.getElementById('modal-reset-after-success').addEventListener('click', () => {
+                cart = [];
+                renderCatalog();
+                updateCartUI();
+                bookingModal.classList.add('hidden');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === bookingModal) {
+                    bookingModal.classList.add('hidden');
+                }
+            });
+
+            // Toast Helper
+            let toastTimer = null;
+            function showToast(msg) {
+                const toast = document.getElementById('toast-notification');
+                document.getElementById('toast-message').textContent = msg;
+                toast.classList.remove('hidden');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 2800);
+            }
+
+            // Initial Render
+            renderCatalog();
+            renderSmartAddons();
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
