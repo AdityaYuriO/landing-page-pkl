@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Premium Growth | Penyewaan Alat Outdoor dan Camping</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            primary: '#1B4332',
+                            secondary: '#2D6A4F',
+                            light: '#40916C',
+                        },
+                        campfire: {
+                            terracotta: '#E07A5F',
+                            amber: '#D97706',
+                            hover: '#C85A3D'
+                        },
+                        ivory: {
+                            warm: '#F4F1DE',
+                            clean: '#F8F9FA'
+                        },
+                        charcoal: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Lora"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-ivory-clean text-charcoal font-sans antialiased selection:bg-campfire-terracotta selection:text-white overflow-x-hidden">
+
+    <!-- =====================================================================
+         1. NAVBAR RESPONSIF (#1B4332)
+    ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-forest-primary text-white shadow-lg border-b border-forest-secondary/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Identitas Marketplace -->
+                <a href="#" class="flex items-center space-x-3 group focus:outline-none">
+                    <div class="w-11 h-11 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15 shadow-inner group-hover:bg-campfire-terracotta transition-colors duration-300">
+                        <i class="ph-fill ph-crown text-2xl text-ivory-warm"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-serif font-bold text-base sm:text-lg leading-tight tracking-tight text-ivory-warm">
+                                RimbaRent
+                            </span>
+                        </div>
+                        <span class="block text-xs font-medium text-emerald-200/90 tracking-wider uppercase">
+                            Premium Growth
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-ivory-warm/90">
+                    <a href="#target-owner" class="hover:text-campfire-terracotta transition-colors">Target Owner</a>
+                    <a href="#profit-maximizer" class="hover:text-campfire-terracotta transition-colors">Profit Maximizer</a>
+                    <a href="#paket-growth" class="hover:text-campfire-terracotta transition-colors">Paket Growth</a>
+                    <a href="#simulasi-roi" class="hover:text-campfire-terracotta transition-colors">Simulasi ROI</a>
+                </nav>
+
+                <!-- Tombol CTA Navbar -->
+                <div class="flex items-center space-x-2.5 sm:space-x-3">
+                    <a href="#paket-growth" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-ivory-warm bg-forest-secondary hover:bg-forest-light border border-white/15 transition">
+                        Bandingkan Paket
+                    </a>
+
+                    <button type="button" onclick="openMembershipModal('premium')"
+                        class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                        <i class="ph-bold ph-crown text-base mr-1.5 sm:mr-2"></i>
+                        Upgrade Premium
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi"
+                        class="lg:hidden p-2.5 rounded-xl text-ivory-warm hover:bg-forest-secondary focus:outline-none cursor-pointer">
+                        <i class="ph-bold ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-forest-primary border-t border-forest-secondary/50 px-4 pt-3 pb-5 space-y-2">
+            <a href="#target-owner" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Target Owner</a>
+            <a href="#profit-maximizer" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Profit Maximizer</a>
+            <a href="#paket-growth" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Paket Growth</a>
+            <a href="#simulasi-roi" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Simulasi ROI</a>
+            <div class="pt-2">
+                <button type="button" onclick="openMembershipModal('premium')" class="mobile-nav-link flex items-center justify-center w-full px-4 py-3 rounded-xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow">
+                    <i class="ph-bold ph-crown text-lg mr-2"></i>
+                    Upgrade Premium
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION (#F4F1DE) + KARTU RINGKASAN PERFORMA OWNER AKTIF
+    ===================================================================== -->
+    <section class="relative overflow-hidden bg-ivory-warm pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-stone-200/80">
+        <!-- Decorative Topographic SVG Pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="topo-growth" width="120" height="120" patternUnits="userSpaceOnUse">
+                        <path d="M0 60 Q 30 30, 60 60 T 120 60" fill="none" stroke="#1B4332" stroke-width="1.5"/>
+                        <path d="M0 90 Q 30 60, 60 90 T 120 90" fill="none" stroke="#2D6A4F" stroke-width="1"/>
+                        <path d="M0 30 Q 30 0, 60 30 T 120 30" fill="none" stroke="#1B4332" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#topo-growth)"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Kolom Kiri: Headline, Deskripsi & Tombol CTA -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-forest-secondary text-white shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-campfire-terracotta mr-2 animate-pulse"></span>
+                        Layanan Membership &amp; Pertumbuhan Bisnis • Owner Premium Growth
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-primary leading-tight">
+                        Owner Premium Growth
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        <strong>Owner Premium Growth</strong> merupakan layanan tambahan berbayar yang ditawarkan kepada pemilik perlengkapan outdoor yang telah bergabung dengan marketplace. Layanan ini bertujuan membantu owner meningkatkan visibilitas produk, memperluas jangkauan pemasaran, dan memperoleh fasilitas tambahan untuk mengembangkan bisnis penyewaan mereka.
+                    </p>
+
+                    <!-- Highlight Nilai Tambah -->
+                    <div class="bg-white/90 backdrop-blur-sm border-l-4 border-campfire-terracotta rounded-2xl p-4 sm:p-5 shadow-sm text-left">
+                        <p class="text-sm sm:text-base font-medium text-charcoal leading-relaxed">
+                            “Naikkan level pengelolaan toko rentalmu: dari paket Basic ke paket Growth &amp; Premium, lengkap dengan promosi toko, laporan performa, prioritas penayangan produk, serta add-on banner &amp; featured product.”
+                        </p>
+                    </div>
+
+                    <!-- Tombol CTA Utama & Sekunder -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button type="button" onclick="openMembershipModal('premium')"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            <i class="ph-bold ph-crown text-xl mr-2.5"></i>
+                            Aktifkan Owner Premium Growth
+                        </button>
+
+                        <a href="#paket-growth"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-forest-secondary hover:bg-forest-primary shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                            <i class="ph-bold ph-scales text-xl mr-2.5"></i>
+                            Lihat Paket &amp; Simulasi
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2 text-xs sm:text-sm text-charcoal/80 font-medium">
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Prioritas Penayangan Produk
+                        </span>
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Laporan Performa Toko Lengkap
+                        </span>
+                        <span class="flex items-center">
+                            <i class="ph-fill ph-check-circle text-forest-secondary text-base mr-1.5"></i>
+                            Diskon Perpanjangan Kuartalan
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Visual Ringkasan Performa / Keuntungan Owner Aktif -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-forest-primary via-forest-secondary to-campfire-amber rounded-3xl transform rotate-2 opacity-20 blur-sm"></div>
+
+                        <div class="relative bg-forest-primary text-ivory-warm rounded-3xl p-6 sm:p-7 shadow-2xl border border-white/10 space-y-5">
+                            <!-- Header Kartu -->
+                            <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                                <div>
+                                    <span class="inline-block px-2.5 py-0.5 rounded-md bg-campfire-amber text-white text-[10px] font-extrabold uppercase tracking-wider mb-1">
+                                        Ringkasan Owner Aktif
+                                    </span>
+                                    <h2 class="font-serif text-lg sm:text-xl font-bold text-white">
+                                        Rimba Camp Gear • Premium Growth
+                                    </h2>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-500/30">
+                                    ● Aktif 68 Hari
+                                </span>
+                            </div>
+
+                            <!-- 2 Metrik Keuntungan Utama -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10">
+                                    <p class="text-[11px] text-emerald-200 font-semibold">Pendapatan Sewa / Bln</p>
+                                    <p class="font-serif text-xl sm:text-2xl font-extrabold text-white mt-0.5">Rp 14,8 jt</p>
+                                    <p class="text-[11px] font-bold text-amber-300 mt-1">↑ +58% vs paket Basic</p>
+                                </div>
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10">
+                                    <p class="text-[11px] text-emerald-200 font-semibold">Okupansi Alat Outdoor</p>
+                                    <p class="font-serif text-xl sm:text-2xl font-extrabold text-amber-300 mt-0.5">86%</p>
+                                    <p class="text-[11px] font-bold text-emerald-300 mt-1">34 Unit Aktif Tersewa</p>
+                                </div>
+                            </div>
+
+                            <!-- Fasilitas Aktif -->
+                            <div class="bg-[#133124] rounded-2xl p-4 border border-white/10 space-y-2.5">
+                                <p class="text-xs font-bold text-white flex items-center">
+                                    <i class="ph-fill ph-sparkle text-campfire-terracotta mr-1.5 text-sm"></i>
+                                    Fasilitas &amp; Add-On Aktif Saat Ini:
+                                </p>
+                                <div class="flex items-center justify-between text-xs text-ivory-warm/85">
+                                    <span>• Prioritas Penayangan &amp; Promosi Toko</span>
+                                    <span class="text-emerald-300 font-bold">Aktif</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-ivory-warm/85">
+                                    <span>• Laporan Performa Toko Mingguan</span>
+                                    <span class="text-emerald-300 font-bold">Aktif</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-ivory-warm/85">
+                                    <span>• Add-On Banner Promo &amp; Featured Product</span>
+                                    <span class="text-amber-300 font-bold">Terpasang</span>
+                                </div>
+                            </div>
+
+                            <!-- Pengingat Perpanjangan (Repeat Purchase Preview) -->
+                            <div class="bg-campfire-terracotta/20 border border-campfire-terracotta/40 rounded-2xl p-3.5 flex items-center justify-between gap-3">
+                                <div class="text-xs">
+                                    <p class="font-bold text-white">Pengingat Perpanjangan: 22 Hari Lagi</p>
+                                    <p class="text-ivory-warm/80 text-[11px]">Nikmati promo diskon 15% perpanjangan kuartalan.</p>
+                                </div>
+                                <button type="button" onclick="openMembershipModal('premium', 'quarterly', true)"
+                                    class="flex-shrink-0 px-3 py-2 rounded-xl text-xs font-bold bg-campfire-terracotta hover:bg-campfire-amber text-white transition cursor-pointer">
+                                    Perpanjang
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. TARGET KONSUMEN (5 SEGMEN TARGET OWNER)
+    ===================================================================== -->
+    <section id="target-owner" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary/15 text-forest-secondary mb-3">
+                    Target Konsumen Owner Premium Growth
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Dirancang untuk Pemilik Rental Outdoor yang Siap Naik Kelas
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg">
+                    Layanan ini ditujukan bagi owner yang sudah terhubung dengan marketplace dan membutuhkan kapasitas visibilitas, pemasaran, serta pengelolaan yang lebih luas.
+                </p>
+            </div>
+
+            <!-- 5 Kartu Target Owner -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Target 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                    <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                        <i class="ph-bold ph-storefront text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Owner Aktif Marketplace</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Owner yang sudah aktif menggunakan marketplace dan ingin mengoptimalkan performa toko yang sudah berjalan.
+                    </p>
+                </div>
+
+                <!-- Target 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                    <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                        <i class="ph-bold ph-tent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Rental Banyak Produk</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pemilik rental camping dengan banyak produk yang membutuhkan katalog lebih luas dan penonjolan unit unggulan.
+                    </p>
+                </div>
+
+                <!-- Target 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                    <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                        <i class="ph-bold ph-broadcast text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Perluas Jangkauan</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Owner yang ingin meningkatkan jangkauan pemasaran agar perlengkapan outdoor mereka menjangkau lebih banyak penyewa.
+                    </p>
+                </div>
+
+                <!-- Target 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col">
+                    <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                        <i class="ph-bold ph-trend-up text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Kembangkan Bisnis Sewa</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Owner yang ingin mengembangkan bisnis penyewaan secara berkelanjutan melalui fitur pertumbuhan terukur.
+                    </p>
+                </div>
+
+                <!-- Target 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 rounded-2xl bg-ivory-warm text-forest-primary flex items-center justify-center mb-4">
+                        <i class="ph-bold ph-sliders-horizontal text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Fasilitas Pengelolaan</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Owner yang membutuhkan fasilitas pengelolaan tambahan seperti analitik performa toko dan promosi terintegrasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. STRATEGI PROFIT MAXIMIZER OWNER (4 PILAR INTERAKTIF: A, B, C, D)
+    ===================================================================== -->
+    <section id="profit-maximizer" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-y border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-primary text-ivory-warm mb-3">
+                    Strategi Profit Maximizer Owner
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    4 Pilar Pertumbuhan Pendapatan &amp; Loyalitas Owner
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg">
+                    Pilih tab pilar di bawah ini untuk melihat mekanisme detail Upselling, Cross-selling, Repeat Purchase, dan Premium Service pada platform marketplace.
+                </p>
+            </div>
+
+            <!-- 4 Tab Pilar Interaktif -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8" role="tablist">
+                <button type="button" data-pillar="A"
+                    class="pillar-tab active text-left p-4 rounded-2xl border-2 border-campfire-terracotta bg-forest-primary text-white shadow-md transition cursor-pointer">
+                    <span class="block text-[11px] font-extrabold uppercase tracking-wider text-amber-300">Pilar A</span>
+                    <span class="font-serif font-bold text-base sm:text-lg block mt-0.5">Upselling</span>
+                    <span class="text-xs text-ivory-warm/80">Upgrade paket membership lebih tinggi</span>
+                </button>
+
+                <button type="button" data-pillar="B"
+                    class="pillar-tab text-left p-4 rounded-2xl border border-stone-200 bg-white text-charcoal hover:border-forest-secondary transition cursor-pointer">
+                    <span class="block text-[11px] font-extrabold uppercase tracking-wider text-forest-secondary">Pilar B</span>
+                    <span class="font-serif font-bold text-base sm:text-lg block mt-0.5">Cross-selling</span>
+                    <span class="text-xs text-charcoal/70">Layanan promosi banner &amp; featured product</span>
+                </button>
+
+                <button type="button" data-pillar="C"
+                    class="pillar-tab text-left p-4 rounded-2xl border border-stone-200 bg-white text-charcoal hover:border-forest-secondary transition cursor-pointer">
+                    <span class="block text-[11px] font-extrabold uppercase tracking-wider text-forest-secondary">Pilar C</span>
+                    <span class="font-serif font-bold text-base sm:text-lg block mt-0.5">Repeat Purchase</span>
+                    <span class="text-xs text-charcoal/70">Pengingat, penawaran &amp; promo perpanjangan</span>
+                </button>
+
+                <button type="button" data-pillar="D"
+                    class="pillar-tab text-left p-4 rounded-2xl border border-stone-200 bg-white text-charcoal hover:border-forest-secondary transition cursor-pointer">
+                    <span class="block text-[11px] font-extrabold uppercase tracking-wider text-forest-secondary">Pilar D</span>
+                    <span class="font-serif font-bold text-base sm:text-lg block mt-0.5">Premium Service</span>
+                    <span class="text-xs text-charcoal/70">Promosi toko, laporan &amp; prioritas tayang</span>
+                </button>
+            </div>
+
+            <!-- Panel Detail Pilar Aktif -->
+            <div id="pillar-detail-panel" class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-stone-200/90">
+                <!-- Diisi dinamis via JavaScript -->
+            </div>
+
+            <!-- Ringkasan 4 Pilar Sekaligus (Grid Referensi Cepat) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+                <div class="bg-white/90 rounded-2xl p-5 border border-stone-200/80">
+                    <p class="text-xs font-extrabold uppercase text-forest-secondary mb-1">A. Upselling</p>
+                    <h4 class="font-bold text-forest-primary text-sm mb-2">Paket Membership Lebih Tinggi</h4>
+                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                        Owner menggunakan paket Basic, lalu website menawarkan paket Premium dengan fitur tambahan.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 rounded-2xl p-5 border border-stone-200/80">
+                    <p class="text-xs font-extrabold uppercase text-forest-secondary mb-1">B. Cross-selling</p>
+                    <h4 class="font-bold text-forest-primary text-sm mb-2">Layanan di Luar Membership Utama</h4>
+                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                        Owner berlangganan membership, lalu website menawarkan promosi banner atau featured product.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 rounded-2xl p-5 border border-stone-200/80">
+                    <p class="text-xs font-extrabold uppercase text-campfire-amber mb-1">C. Repeat Purchase</p>
+                    <h4 class="font-bold text-forest-primary text-sm mb-2">Dorongan Perpanjangan Layanan</h4>
+                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                        Melalui pengingat masa berlaku membership, penawaran perpanjangan, dan promo perpanjangan paket.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 rounded-2xl p-5 border border-stone-200/80">
+                    <p class="text-xs font-extrabold uppercase text-campfire-terracotta mb-1">D. Premium Service</p>
+                    <h4 class="font-bold text-forest-primary text-sm mb-2">Fasilitas Pendukung Pertumbuhan</h4>
+                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                        Mencakup promosi toko, laporan performa toko, dan prioritas penayangan produk sesuai ketentuan platform.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. PERBANDINGAN PAKET MEMBERSHIP & ADD-ON CROSS-SELL + SIMULASI ROI
+    ===================================================================== -->
+    <section id="paket-growth" class="scroll-mt-16 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- Header & Toggle Siklus Billing (Bulanan vs Kuartalan dengan Diskon Perpanjangan) -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                        Perbandingan Paket Membership &amp; Add-On
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary">
+                        Pilih Paket Membership &amp; Tambahan Cross-Sell
+                    </h2>
+                    <p class="text-charcoal/80 text-base mt-2">
+                        Bandingkan paket <strong>Basic</strong>, <strong>Growth Pro</strong>, dan <strong>Premium Growth</strong>. Pilih siklus kuartalan untuk hemat &amp; nikmati promo perpanjangan.
+                    </p>
+                </div>
+
+                <!-- Toggle Billing Bulanan / Kuartalan -->
+                <div class="bg-white p-2 rounded-2xl border border-stone-200 shadow-sm inline-flex items-center space-x-2 self-start lg:self-auto">
+                    <button type="button" id="billing-monthly-btn"
+                        class="billing-toggle px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-forest-primary text-white transition cursor-pointer">
+                        Bulanan
+                    </button>
+                    <button type="button" id="billing-quarterly-btn"
+                        class="billing-toggle px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-ivory-warm text-charcoal hover:bg-stone-200 transition flex items-center space-x-2 cursor-pointer">
+                        <span>Kuartalan (3 Bulan)</span>
+                        <span class="px-2 py-0.5 rounded-md bg-campfire-terracotta text-white text-[10px] font-extrabold">
+                            Hemat + Promo Perpanjangan 15%
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid 3 Paket Membership: Basic vs Growth Pro vs Premium Growth -->
+            <div id="membership-tiers-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Diisi dinamis via JavaScript -->
+            </div>
+
+            <!-- Bagian Cross-Selling Add-Ons + Simulasi ROI (#simulasi-roi) -->
+            <div id="simulasi-roi" class="scroll-mt-24 bg-ivory-warm rounded-3xl p-6 sm:p-10 border border-stone-200 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Kolom Kiri: Cross-Selling Add-Ons (Banner Promo & Featured Product) -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-campfire-amber text-white mb-2">
+                                Cross-Selling Add-On di Luar Membership Utama
+                            </span>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-forest-primary">
+                                Tambahkan Layanan Promosi Ekstra ke Paketmu
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Centang add-on di bawah ini untuk melihat simulasi biaya gabungan dan estimasi peningkatan performa sewa tokomu.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3" id="cross-sell-addons-list">
+                            <!-- Add-on 1: Banner Promo -->
+                            <label class="flex items-start justify-between bg-white p-4 rounded-2xl border border-stone-200 hover:border-forest-secondary transition cursor-pointer gap-4">
+                                <div class="flex items-start space-x-3.5">
+                                    <input type="checkbox" data-addon-id="banner" data-price="95000" data-reach-boost="2400" data-orders-boost="7"
+                                        class="addon-checkbox mt-1 w-4 h-4 rounded accent-campfire-terracotta cursor-pointer">
+                                    <div>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-bold text-sm sm:text-base text-forest-primary">Banner Promo Toko / Katalog</span>
+                                            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-forest-secondary">Cross-Sell Populer</span>
+                                        </div>
+                                        <p class="text-xs text-charcoal/75 mt-1 leading-relaxed">
+                                            Menampilkan banner visual toko rental kamu di halaman kategori perlengkapan outdoor selama periode aktif.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-right flex-shrink-0">
+                                    <span class="font-extrabold text-sm text-campfire-terracotta block">+ Rp 95.000</span>
+                                    <span class="text-[11px] text-charcoal/60">/periode</span>
+                                </div>
+                            </label>
+
+                            <!-- Add-on 2: Featured Product -->
+                            <label class="flex items-start justify-between bg-white p-4 rounded-2xl border border-stone-200 hover:border-forest-secondary transition cursor-pointer gap-4">
+                                <div class="flex items-start space-x-3.5">
+                                    <input type="checkbox" checked data-addon-id="featured" data-price="75000" data-reach-boost="1900" data-orders-boost="6"
+                                        class="addon-checkbox mt-1 w-4 h-4 rounded accent-campfire-terracotta cursor-pointer">
+                                    <div>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-bold text-sm sm:text-base text-forest-primary">Featured Product (Produk Unggulan)</span>
+                                            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-campfire-amber">Direkomendasikan</span>
+                                        </div>
+                                        <p class="text-xs text-charcoal/75 mt-1 leading-relaxed">
+                                            Menempatkan tenda, paket camping, atau alat outdoor terlaris kamu pada slot produk unggulan &amp; rekomendasi.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-right flex-shrink-0">
+                                    <span class="font-extrabold text-sm text-campfire-terracotta block">+ Rp 75.000</span>
+                                    <span class="text-[11px] text-charcoal/60">/periode</span>
+                                </div>
+                            </label>
+
+                            <!-- Add-on 3: Paket Perpanjangan Prioritas -->
+                            <label class="flex items-start justify-between bg-white p-4 rounded-2xl border border-stone-200 hover:border-forest-secondary transition cursor-pointer gap-4">
+                                <div class="flex items-start space-x-3.5">
+                                    <input type="checkbox" data-addon-id="renewal_boost" data-price="55000" data-reach-boost="1200" data-orders-boost="4"
+                                        class="addon-checkbox mt-1 w-4 h-4 rounded accent-campfire-terracotta cursor-pointer">
+                                    <div>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-bold text-sm sm:text-base text-forest-primary">Auto-Reminder &amp; Voucher Perpanjangan</span>
+                                            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-forest-secondary/15 text-forest-primary">Repeat Purchase</span>
+                                        </div>
+                                        <p class="text-xs text-charcoal/75 mt-1 leading-relaxed">
+                                            Pengingat otomatis masa berlaku membership H-7, penawaran perpanjangan prioritas, dan promo perpanjangan paket.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-right flex-shrink-0">
+                                    <span class="font-extrabold text-sm text-campfire-terracotta block">+ Rp 55.000</span>
+                                    <span class="text-[11px] text-charcoal/60">/periode</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Ringkasan Biaya & Simulasi ROI (#1B4332) -->
+                    <div class="lg:col-span-5 bg-forest-primary text-ivory-warm rounded-3xl p-6 sm:p-7 shadow-xl space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/15 pb-3">
+                            <div>
+                                <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-300">Simulasi Biaya &amp; ROI</span>
+                                <h4 class="font-serif text-lg font-bold text-white" id="roi-selected-tier-name">Premium Growth</h4>
+                            </div>
+                            <span id="roi-billing-badge" class="px-2.5 py-1 rounded-lg bg-forest-secondary text-emerald-200 text-xs font-bold">
+                                Bulanan
+                            </span>
+                        </div>
+
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <div class="flex justify-between text-ivory-warm/80">
+                                <span>Biaya Paket Membership:</span>
+                                <span class="font-bold text-white">Rp <span id="roi-base-price">199.000</span></span>
+                            </div>
+                            <div class="flex justify-between text-ivory-warm/80">
+                                <span>Total Add-On Terpilih:</span>
+                                <span class="font-bold text-amber-300">+ Rp <span id="roi-addons-price">75.000</span></span>
+                            </div>
+                            <div id="roi-renewal-discount-row" class="hidden flex justify-between text-emerald-300 text-xs">
+                                <span>Benefit Kuartalan &amp; Promo Perpanjangan:</span>
+                                <span class="font-bold">Hemat 15%</span>
+                            </div>
+                            <div class="pt-2 border-t border-white/15 flex justify-between items-baseline">
+                                <span class="font-bold text-white">Total Paket &amp; Add-On:</span>
+                                <span class="font-serif text-2xl font-extrabold text-white">
+                                    Rp <span id="roi-grand-total">274.000</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Estimasi Dampak Bisnis -->
+                        <div class="bg-[#133124] rounded-2xl p-4 border border-white/10 space-y-2">
+                            <p class="text-xs font-bold text-emerald-300">Estimasi Dampak Performa Owner:</p>
+                            <div class="grid grid-cols-2 gap-2 text-center pt-1">
+                                <div class="bg-white/5 p-2.5 rounded-xl">
+                                    <p class="text-[10px] text-ivory-warm/70">Tambahan Jangkauan</p>
+                                    <p class="font-bold text-base text-white">+<span id="roi-est-reach">8.400</span></p>
+                                </div>
+                                <div class="bg-white/5 p-2.5 rounded-xl">
+                                    <p class="text-[10px] text-ivory-warm/70">Estimasi ROI Sewa</p>
+                                    <p class="font-bold text-base text-amber-300"><span id="roi-multiple">5,8x</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="openModalWithCurrentSim()"
+                            class="w-full py-3.5 px-5 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition cursor-pointer">
+                            Aktifkan Paket &amp; Add-On Ini →
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. TUJUAN BISNIS (5 POIN) & INDIKATOR KEBERHASILAN / KPI (5 METRIK)
+    ===================================================================== -->
+    <section id="tujuan-kpi" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-t border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- Bagian A: 5 Tujuan Bisnis -->
+            <div>
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                        Tujuan Bisnis
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-3">
+                        5 Tujuan Utama Layanan Owner Premium Growth
+                    </h2>
+                    <p class="text-charcoal/80 text-base">
+                        Menyelaraskan pertumbuhan bisnis mitra owner dengan keberlanjutan pendapatan dan loyalitas ekosistem marketplace.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm">
+                        <span class="inline-flex w-8 h-8 rounded-lg bg-forest-primary text-white font-bold text-xs items-center justify-center mb-3">01</span>
+                        <h3 class="font-bold text-forest-primary text-sm mb-1.5">Pendapatan Tambahan Marketplace</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Meningkatkan pendapatan tambahan marketplace melalui layanan membership dan promosi owner.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm">
+                        <span class="inline-flex w-8 h-8 rounded-lg bg-forest-secondary text-white font-bold text-xs items-center justify-center mb-3">02</span>
+                        <h3 class="font-bold text-forest-primary text-sm mb-1.5">Meningkatkan Loyalitas Owner</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Meningkatkan loyalitas owner lewat fasilitas pengelolaan toko dan dukungan pertumbuhan jangka panjang.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm">
+                        <span class="inline-flex w-8 h-8 rounded-lg bg-forest-secondary text-white font-bold text-xs items-center justify-center mb-3">03</span>
+                        <h3 class="font-bold text-forest-primary text-sm mb-1.5">Mengembangkan Bisnis Penyewaan</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Membantu owner mengembangkan bisnis penyewaan dengan jangkauan calon penyewa yang lebih luas.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm">
+                        <span class="inline-flex w-8 h-8 rounded-lg bg-campfire-amber text-white font-bold text-xs items-center justify-center mb-3">04</span>
+                        <h3 class="font-bold text-forest-primary text-sm mb-1.5">Penggunaan Fitur Premium</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Meningkatkan penggunaan fitur premium seperti laporan performa, promosi toko, dan prioritas tayang.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm sm:col-span-2 lg:col-span-1">
+                        <span class="inline-flex w-8 h-8 rounded-lg bg-campfire-terracotta text-white font-bold text-xs items-center justify-center mb-3">05</span>
+                        <h3 class="font-bold text-forest-primary text-sm mb-1.5">Perpanjangan Layanan Berbayar</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Mendorong perpanjangan layanan berbayar secara rutin melalui pengingat, penawaran, dan promo paket.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian B: 5 Indikator Keberhasilan (KPI) -->
+            <div class="bg-forest-primary text-ivory-warm rounded-3xl p-6 sm:p-10 shadow-xl">
+                <div class="max-w-3xl mb-8">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-campfire-terracotta text-white mb-2">
+                        Indikator Keberhasilan (KPI)
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+                        Metrik Utama Pengukuran Keberhasilan Layanan
+                    </h3>
+                    <p class="text-sm text-ivory-warm/80 mt-1">
+                        Lima indikator keberhasilan utama yang dipantau untuk mengevaluasi adopsi, retensi, dan nilai tambah layanan bagi owner maupun platform.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <!-- KPI 1 -->
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-300">KPI 01</p>
+                        <h4 class="font-bold text-sm text-white mt-1">Jumlah Owner Berlangganan</h4>
+                        <p class="font-serif text-2xl font-extrabold text-amber-300 mt-2">320+ Owner</p>
+                        <p class="text-xs text-ivory-warm/75 mt-1">Total owner aktif berlangganan paket berbayar.</p>
+                    </div>
+
+                    <!-- KPI 2 -->
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-300">KPI 02</p>
+                        <h4 class="font-bold text-sm text-white mt-1">Pendapatan Layanan Premium</h4>
+                        <p class="font-serif text-2xl font-extrabold text-white mt-2">+42% MoM</p>
+                        <p class="text-xs text-ivory-warm/75 mt-1">Pertumbuhan pendapatan berulang dari membership &amp; add-on.</p>
+                    </div>
+
+                    <!-- KPI 3 -->
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-300">KPI 03</p>
+                        <h4 class="font-bold text-sm text-white mt-1">Pembelian Fitur Promosi</h4>
+                        <p class="font-serif text-2xl font-extrabold text-amber-300 mt-2">640+ Order</p>
+                        <p class="text-xs text-ivory-warm/75 mt-1">Transaksi cross-sell banner promo &amp; featured product.</p>
+                    </div>
+
+                    <!-- KPI 4 -->
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-300">KPI 04</p>
+                        <h4 class="font-bold text-sm text-white mt-1">Tingkat Perpanjangan Membership</h4>
+                        <p class="font-serif text-2xl font-extrabold text-white mt-2">78% Renewal</p>
+                        <p class="text-xs text-ivory-warm/75 mt-1">Rasio owner yang memperpanjang masa berlaku paket.</p>
+                    </div>
+
+                    <!-- KPI 5 -->
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10 sm:col-span-2 lg:col-span-1">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-300">KPI 05</p>
+                        <h4 class="font-bold text-sm text-white mt-1">Owner Aktif Fitur Premium</h4>
+                        <p class="font-serif text-2xl font-extrabold text-campfire-terracotta mt-2">89% Aktif</p>
+                        <p class="text-xs text-ivory-warm/75 mt-1">Owner yang rutin memakai laporan, promosi toko &amp; prioritas.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. SECTION CTA PENUTUP
+    ===================================================================== -->
+    <section class="py-16 lg:py-20 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl bg-forest-primary text-ivory-warm p-8 sm:p-12 lg:p-14 overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+                    <span class="inline-block px-4 py-1 rounded-full bg-forest-secondary text-xs font-bold uppercase tracking-wider text-emerald-200">
+                        Siap Memaksimalkan Potensi Rental Outdoor Anda?
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                        Tingkatkan visibilitas produk dan kembangkan bisnis penyewaan dengan Owner Premium Growth
+                    </h2>
+                    <p class="text-base sm:text-lg text-ivory-warm/90 leading-relaxed">
+                        Mulai dari upgrade paket membership, tambahkan promosi banner atau featured product, hingga kelola perpanjangan paket dengan mudah.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <button type="button" onclick="openMembershipModal('premium')"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition-all duration-200 cursor-pointer">
+                            <i class="ph-bold ph-crown text-xl mr-2"></i>
+                            Aktifkan Owner Premium Growth
+                        </button>
+                        <a href="#profit-maximizer"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base font-bold text-white bg-forest-secondary hover:bg-emerald-700 border border-white/15 shadow transition-all duration-200">
+                            Pelajari Strategi Profit Maximizer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. FOOTER (#1B4332)
+    ===================================================================== -->
+    <footer class="bg-forest-primary text-ivory-warm border-t border-forest-secondary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+                
+                <!-- Brand & Deskripsi -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15">
+                            <i class="ph-fill ph-crown text-xl text-ivory-warm"></i>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-lg text-white">
+                                RimbaRent
+                            </span>
+                            <span class="text-xs text-campfire-terracotta font-bold uppercase tracking-wider">Owner Premium Growth</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-ivory-warm/80 leading-relaxed max-w-md">
+                        Layanan membership &amp; pertumbuhan bisnis bagi pemilik perlengkapan outdoor di marketplace untuk memperluas jangkauan pemasaran, meningkatkan visibilitas produk, dan mengembangkan usaha penyewaan.
+                    </p>
+                </div>
+
+                <!-- Navigasi -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li><a href="#target-owner" class="hover:text-campfire-terracotta transition-colors">Target Owner</a></li>
+                        <li><a href="#profit-maximizer" class="hover:text-campfire-terracotta transition-colors">Profit Maximizer (A–D)</a></li>
+                        <li><a href="#paket-growth" class="hover:text-campfire-terracotta transition-colors">Perbandingan Paket</a></li>
+                        <li><a href="#tujuan-kpi" class="hover:text-campfire-terracotta transition-colors">Tujuan &amp; Indikator KPI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Pilar & Layanan -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Layanan &amp; Pilar Pertumbuhan</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li>Upselling: Basic → Growth Pro → Premium Growth</li>
+                        <li>Cross-Selling: Banner Promo &amp; Featured Product</li>
+                        <li>Repeat Purchase: Pengingat &amp; Promo Perpanjangan</li>
+                        <li>Premium Service: Promosi Toko, Laporan &amp; Prioritas</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory-warm/70 gap-4">
+                <p>&copy; 2026 Penyewaan Alat Outdoor dan Camping. Seluruh Hak Cipta Dilindungi.</p>
+                <p>Pertumbuhan berkelanjutan untuk mitra owner perlengkapan outdoor.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         9. MODAL AKTIVASI & PERPANJANGAN MEMBERSHIP INTERAKTIF
+    ===================================================================== -->
+    <div id="membership-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-stone-200 my-auto">
+            <!-- Header Modal -->
+            <div class="bg-forest-primary text-ivory-warm px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-campfire-terracotta">Manajemen Membership Owner</span>
+                    <h3 class="font-serif text-xl font-bold text-white">Aktivasi &amp; Perpanjangan Membership</h3>
+                </div>
+                <button type="button" id="close-membership-modal" class="p-2 rounded-xl text-ivory-warm hover:bg-forest-secondary transition cursor-pointer">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Body Modal -->
+            <div class="p-6 max-h-[82vh] overflow-y-auto space-y-5">
+                <form id="membership-form" class="space-y-4">
+                    <!-- Mode: Aktivasi / Upgrade Baru vs Perpanjangan (Repeat Purchase) -->
+                    <div class="grid grid-cols-2 gap-2.5 bg-ivory-clean p-1.5 rounded-2xl border border-stone-200">
+                        <button type="button" id="mode-new-btn" data-mode="new"
+                            class="mode-btn py-2 px-3 rounded-xl text-xs font-bold bg-forest-primary text-white transition cursor-pointer">
+                            Aktivasi / Upgrade Paket
+                        </button>
+                        <button type="button" id="mode-renew-btn" data-mode="renew"
+                            class="mode-btn py-2 px-3 rounded-xl text-xs font-bold bg-transparent text-charcoal hover:bg-white transition cursor-pointer">
+                            Perpanjangan Paket (Promo)
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="modal-tier-select" class="block text-xs font-bold text-charcoal mb-1">
+                                Pilihan Paket Membership <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <select id="modal-tier-select" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm font-medium bg-ivory-clean focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                                <option value="basic">Basic (Rp 49.000/bln)</option>
+                                <option value="growth">Growth Pro (Rp 119.000/bln)</option>
+                                <option value="premium" selected>Premium Growth (Rp 199.000/bln)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="modal-cycle-select" class="block text-xs font-bold text-charcoal mb-1">
+                                Durasi / Siklus Tagihan
+                            </label>
+                            <select id="modal-cycle-select" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm font-medium bg-ivory-clean focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                                <option value="monthly">1 Bulan (Bulanan)</option>
+                                <option value="quarterly">3 Bulan (Kuartalan • Hemat 15%)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox Add-on Cross-Sell di Dalam Modal -->
+                    <div class="bg-ivory-warm p-4 rounded-2xl border border-stone-200 space-y-2.5">
+                        <p class="text-xs font-bold text-forest-primary">Layanan Tambahan (Cross-Selling Add-On):</p>
+                        <label class="flex items-center justify-between text-xs cursor-pointer">
+                            <span class="flex items-center space-x-2">
+                                <input type="checkbox" id="modal-addon-banner" class="modal-addon-cb rounded accent-campfire-terracotta">
+                                <span class="font-semibold text-charcoal">Banner Promo Toko / Katalog</span>
+                            </span>
+                            <span class="font-bold text-forest-primary">+ Rp 95.000</span>
+                        </label>
+                        <label class="flex items-center justify-between text-xs cursor-pointer">
+                            <span class="flex items-center space-x-2">
+                                <input type="checkbox" id="modal-addon-featured" checked class="modal-addon-cb rounded accent-campfire-terracotta">
+                                <span class="font-semibold text-charcoal">Featured Product (Produk Unggulan)</span>
+                            </span>
+                            <span class="font-bold text-forest-primary">+ Rp 75.000</span>
+                        </label>
+                        <label class="flex items-center justify-between text-xs cursor-pointer">
+                            <span class="flex items-center space-x-2">
+                                <input type="checkbox" id="modal-addon-renewal" class="modal-addon-cb rounded accent-campfire-terracotta">
+                                <span class="font-semibold text-charcoal">Auto-Reminder &amp; Voucher Perpanjangan</span>
+                            </span>
+                            <span class="font-bold text-forest-primary">+ Rp 55.000</span>
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="modal-store-name" class="block text-xs font-bold text-charcoal mb-1">
+                                Nama Toko Rental / Owner <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="modal-store-name" required placeholder="Contoh: Rimba Camp Gear"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                        <div>
+                            <label for="modal-owner-email" class="block text-xs font-bold text-charcoal mb-1">
+                                Email / WhatsApp Owner <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="modal-owner-email" required placeholder="owner@rimbacamp.id / 0812xxxx"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                    </div>
+
+                    <!-- Ringkasan Aktivasi / Perpanjangan -->
+                    <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200 space-y-1.5">
+                        <div class="flex items-center justify-between text-xs text-charcoal/80">
+                            <span>Jenis Transaksi:</span>
+                            <span id="modal-summary-mode" class="font-bold text-forest-primary">Aktivasi / Upgrade Paket</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-charcoal/80">
+                            <span>Promo / Diskon Perpanjangan:</span>
+                            <span id="modal-summary-promo" class="font-bold text-campfire-hover">Standar</span>
+                        </div>
+                        <div class="pt-2 border-t border-emerald-200 flex items-center justify-between">
+                            <span class="text-sm font-bold text-forest-primary">Total Pembayaran Estimasi:</span>
+                            <span class="font-serif text-xl font-extrabold text-forest-primary">
+                                Rp <span id="modal-summary-total">274.000</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 px-6 rounded-xl text-sm sm:text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition cursor-pointer">
+                        Konfirmasi Aktivasi / Perpanjangan
+                    </button>
+                </form>
+
+                <!-- Ringkasan Sukses -->
+                <div id="membership-success-box" class="hidden bg-emerald-50 border border-emerald-300 rounded-2xl p-6 text-center space-y-3">
+                    <div class="w-14 h-14 rounded-full bg-forest-secondary text-white mx-auto flex items-center justify-center">
+                        <i class="ph-bold ph-check text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-forest-primary">
+                        Membership Owner Berhasil Diproses!
+                    </h4>
+                    <p id="membership-success-detail" class="text-xs sm:text-sm text-charcoal/85 leading-relaxed"></p>
+                    <button type="button" id="close-membership-success" class="mt-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-forest-primary hover:bg-forest-secondary transition cursor-pointer">
+                        Selesai
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT LOGIKA PILAR, PAKET MEMBERSHIP, SIMULASI ROI & MODAL
+    ===================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Data 4 Pilar Profit Maximizer Owner
+            const pillarsData = {
+                A: {
+                    code: 'Pilar A • Upselling',
+                    title: 'Menawarkan Paket Membership yang Lebih Tinggi',
+                    desc: 'Mendorong owner yang sudah merasakan manfaat dasar di paket Basic untuk beralih ke paket Growth Pro atau Premium Growth dengan kapasitas katalog, prioritas tayang, dan fasilitas pengelolaan yang lebih lengkap.',
+                    exampleTitle: 'Contoh Skenario Upselling di Marketplace:',
+                    exampleText: 'Owner menggunakan paket Basic untuk menyewakan perlengkapan camping. Saat jumlah produk dan permintaan sewa meningkat, website menawarkan paket Premium dengan fitur tambahan berupa laporan performa toko, promosi toko, dan prioritas penayangan produk.',
+                    highlights: [
+                        'Transisi mulus dari paket Basic ke Growth Pro / Premium Growth',
+                        'Penambahan slot produk & akses analitik performa toko',
+                        'Dirancang saat toko owner menunjukkan pertumbuhan permintaan sewa'
+                    ],
+                    ctaText: 'Simulasikan Upgrade ke Premium Growth',
+                    targetTier: 'premium'
+                },
+                B: {
+                    code: 'Pilar B • Cross-selling',
+                    title: 'Menawarkan Layanan Lain di Luar Membership Utama',
+                    desc: 'Menghadirkan layanan pemasaran tambahan di luar langganan membership utama agar owner dapat memperluas visibilitas pada momen puncak seperti akhir pekan atau musim liburan.',
+                    exampleTitle: 'Contoh Skenario Cross-selling di Marketplace:',
+                    exampleText: 'Owner berlangganan membership, lalu website menawarkan promosi banner atau featured product agar produk tenda, paket camping, atau alat outdoor unggulan lebih menonjol di halaman kategori dan rekomendasi.',
+                    highlights: [
+                        'Add-On Banner Promo Toko di halaman kategori',
+                        'Add-On Featured Product untuk produk pilihan owner',
+                        'Dapat dikombinasikan dengan paket membership aktif'
+                    ],
+                    ctaText: 'Atur Add-On Cross-Selling',
+                    targetTier: 'growth'
+                },
+                C: {
+                    code: 'Pilar C • Repeat Purchase',
+                    title: 'Mendorong Owner Memperpanjang Layanan Berbayar',
+                    desc: 'Menjaga kesinambungan visibilitas dan fasilitas toko owner melalui sistem pengingat masa berlaku, penawaran perpanjangan tepat waktu, serta promo perpanjangan paket.',
+                    exampleTitle: 'Contoh Skenario Repeat Purchase di Marketplace:',
+                    exampleText: 'Menjelang berakhirnya masa berlaku membership, sistem mengirimkan pengingat masa berlaku membership, disertai penawaran perpanjangan dan promo perpanjangan paket agar performa toko tidak terputus.',
+                    highlights: [
+                        'Pengingat masa berlaku membership sebelum jatuh tempo',
+                        'Penawaran perpanjangan praktis langsung dari dashboard',
+                        'Promo perpanjangan paket (termasuk opsi kuartalan hemat)'
+                    ],
+                    ctaText: 'Coba Simulasi Perpanjangan Paket',
+                    targetTier: 'premium'
+                },
+                D: {
+                    code: 'Pilar D • Premium Service',
+                    title: 'Layanan Tambahan untuk Mendukung Perkembangan Bisnis Owner',
+                    desc: 'Memberikan fasilitas bernilai tambah yang membantu owner mengambil keputusan berbasis data, memperkuat brand toko rental, dan meningkatkan peluang keterlihatan produk.',
+                    exampleTitle: 'Contoh Skenario Premium Service di Marketplace:',
+                    exampleText: 'Owner memperoleh layanan pendukung berupa promosi toko, laporan performa toko (tayangan, klik, dan interaksi penyewa), serta prioritas penayangan produk sesuai ketentuan platform.',
+                    highlights: [
+                        'Promosi toko untuk memperkuat identitas brand rental',
+                        'Laporan performa toko guna memantau efektivitas produk',
+                        'Prioritas penayangan produk sesuai ketentuan platform'
+                    ],
+                    ctaText: 'Aktifkan Layanan Premium Service',
+                    targetTier: 'premium'
+                }
+            };
+
+            const pillarTabs = document.querySelectorAll('.pillar-tab');
+            const pillarPanel = document.getElementById('pillar-detail-panel');
+
+            function renderPillarDetail(pillarKey) {
+                const p = pillarsData[pillarKey] || pillarsData.A;
+
+                pillarTabs.forEach(tab => {
+                    const isActive = tab.dataset.pillar === pillarKey;
+                    if (isActive) {
+                        tab.classList.remove('bg-white', 'text-charcoal', 'border-stone-200');
+                        tab.classList.add('bg-forest-primary', 'text-white', 'border-campfire-terracotta', 'shadow-md');
+                        const sub = tab.querySelector('span:last-child');
+                        if (sub) {
+                            sub.classList.remove('text-charcoal/70');
+                            sub.classList.add('text-ivory-warm/80');
+                        }
+                    } else {
+                        tab.classList.remove('bg-forest-primary', 'text-white', 'border-campfire-terracotta', 'shadow-md');
+                        tab.classList.add('bg-white', 'text-charcoal', 'border-stone-200');
+                        const sub = tab.querySelector('span:last-child');
+                        if (sub) {
+                            sub.classList.remove('text-ivory-warm/80');
+                            sub.classList.add('text-charcoal/70');
+                        }
+                    }
+                });
+
+                pillarPanel.innerHTML = `
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-campfire-terracotta/15 text-campfire-hover">
+                                ${p.code}
+                            </span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest-primary">
+                                ${p.title}
+                            </h3>
+                            <p class="text-sm sm:text-base text-charcoal/85 leading-relaxed">
+                                ${p.desc}
+                            </p>
+                            <ul class="space-y-2 pt-1">
+                                ${p.highlights.map(h => `
+                                    <li class="flex items-center space-x-2.5 text-xs sm:text-sm font-medium text-charcoal">
+                                        <i class="ph-fill ph-check-circle text-forest-secondary text-base flex-shrink-0"></i>
+                                        <span>${h}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="lg:col-span-5 bg-ivory-warm rounded-2xl p-6 border border-stone-200 space-y-4">
+                            <div class="flex items-center space-x-2 text-forest-primary font-bold text-sm">
+                                <i class="ph-fill ph-lightbulb text-campfire-amber text-lg"></i>
+                                <span>${p.exampleTitle}</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-charcoal/85 leading-relaxed bg-white p-4 rounded-xl border border-stone-200/70">
+                                ${p.exampleText}
+                            </p>
+                            <button type="button" onclick="openMembershipModal('${p.targetTier}', 'monthly', ${pillarKey === 'C'})"
+                                class="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-white bg-forest-secondary hover:bg-forest-primary transition cursor-pointer">
+                                ${p.ctaText} →
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            pillarTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    renderPillarDetail(tab.dataset.pillar);
+                });
+            });
+
+            renderPillarDetail('A');
+
+            // 3. Data Paket Membership: Basic vs Growth Pro vs Premium Growth
+            const membershipTiers = [
+                {
+                    id: 'basic',
+                    name: 'Basic',
+                    badge: 'Paket Awal Owner',
+                    monthlyPrice: 49000,
+                    quarterlyPrice: 125000, // ~15% hemat
+                    desc: 'Paket dasar bagi owner aktif untuk mengelola katalog perlengkapan outdoor di marketplace.',
+                    baseReach: 2500,
+                    baseOrders: 5,
+                    featured: false,
+                    features: [
+                        'Pencantuman katalog perlengkapan outdoor standar',
+                        'Pengelolaan pesanan penyewaan dasar di dashboard',
+                        'Dapat di-upgrade (Upselling) kapan saja ke Growth / Premium',
+                        'Opsi pembelian add-on promosi terpisah'
+                    ]
+                },
+                {
+                    id: 'growth',
+                    name: 'Growth Pro',
+                    badge: 'Upselling Populer',
+                    monthlyPrice: 119000,
+                    quarterlyPrice: 303000,
+                    desc: 'Dirancang untuk owner yang ingin memperluas jangkauan pemasaran dan memantau performa produk.',
+                    baseReach: 6200,
+                    baseOrders: 14,
+                    featured: false,
+                    features: [
+                        'Semua fitur paket Basic',
+                        'Laporan performa produk & kunjungan calon penyewa',
+                        'Akses lebih luas untuk add-on Banner & Featured Product',
+                        'Pengingat & promo perpanjangan paket otomatis'
+                    ]
+                },
+                {
+                    id: 'premium',
+                    name: 'Premium Growth',
+                    badge: 'Rekomendasi Pertumbuhan',
+                    monthlyPrice: 199000,
+                    quarterlyPrice: 507000,
+                    desc: 'Paket lengkap untuk memaksimalkan visibilitas, promosi toko, laporan performa, dan prioritas tayang.',
+                    baseReach: 12500,
+                    baseOrders: 28,
+                    featured: true,
+                    features: [
+                        'Prioritas penayangan produk sesuai ketentuan platform',
+                        'Promosi toko & laporan performa toko komprehensif',
+                        'Prioritas slot kampanye & promo perpanjangan khusus',
+                        'Dukungan penuh untuk rental camping skala berkembang'
+                    ]
+                }
+            ];
+
+            let billingCycle = 'monthly'; // 'monthly' | 'quarterly'
+            let selectedTierId = 'premium';
+
+            const tiersGrid = document.getElementById('membership-tiers-grid');
+            const monthlyBtn = document.getElementById('billing-monthly-btn');
+            const quarterlyBtn = document.getElementById('billing-quarterly-btn');
+
+            function getTierPrice(tier) {
+                return billingCycle === 'quarterly' ? tier.quarterlyPrice : tier.monthlyPrice;
+            }
+
+            function renderMembershipTiers() {
+                const cycleSuffix = billingCycle === 'quarterly' ? '/ 3 bulan' : '/ bulan';
+
+                tiersGrid.innerHTML = membershipTiers.map(tier => {
+                    const price = getTierPrice(tier);
+                    const isSelected = selectedTierId === tier.id;
+                    const cardStyle = tier.featured
+                        ? 'bg-forest-primary text-ivory-warm border-2 border-campfire-terracotta shadow-2xl lg:-translate-y-2'
+                        : 'bg-white text-charcoal border border-stone-200/90 shadow-sm hover:shadow-lg';
+
+                    const titleColor = tier.featured ? 'text-white' : 'text-forest-primary';
+                    const subColor = tier.featured ? 'text-ivory-warm/80' : 'text-charcoal/75';
+                    const priceColor = tier.featured ? 'text-amber-300' : 'text-forest-primary';
+                    const badgeStyle = tier.featured
+                        ? 'bg-campfire-terracotta text-white'
+                        : 'bg-forest-secondary/15 text-forest-secondary';
+
+                    return `
+                        <div class="rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${cardStyle}">
+                            <div class="space-y-5">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider ${badgeStyle}">
+                                        ${tier.badge}
+                                    </span>
+                                    ${isSelected ? `<span class="text-xs font-extrabold ${tier.featured ? 'text-amber-300' : 'text-forest-secondary'}">✓ Dipilih</span>` : ''}
+                                </div>
+
+                                <div>
+                                    <h3 class="font-serif text-2xl font-bold ${titleColor}">${tier.name}</h3>
+                                    <p class="text-xs sm:text-sm ${subColor} mt-1.5 leading-relaxed">${tier.desc}</p>
+                                </div>
+
+                                <div class="pt-2 pb-4 border-b ${tier.featured ? 'border-white/15' : 'border-stone-200'}">
+                                    <div class="flex items-baseline space-x-1.5">
+                                        <span class="font-serif text-3xl font-extrabold ${priceColor}">
+                                            Rp ${price.toLocaleString('id-ID')}
+                                        </span>
+                                        <span class="text-xs ${subColor}">${cycleSuffix}</span>
+                                    </div>
+                                    ${billingCycle === 'quarterly'
+                                        ? `<span class="text-[11px] font-bold ${tier.featured ? 'text-emerald-300' : 'text-forest-secondary'} block mt-1">Termasuk benefit kuartalan &amp; promo perpanjangan 15%</span>`
+                                        : `<span class="text-[11px] ${subColor} block mt-1">Fleksibel bulanan • Bisa perpanjang kapan saja</span>`
+                                    }
+                                </div>
+
+                                <ul class="space-y-2.5 text-xs sm:text-sm">
+                                    ${tier.features.map(feat => `
+                                        <li class="flex items-start space-x-2.5">
+                                            <i class="ph-fill ph-check-circle text-base mt-0.5 flex-shrink-0 ${tier.featured ? 'text-campfire-terracotta' : 'text-forest-secondary'}"></i>
+                                            <span class="${tier.featured ? 'text-ivory-warm/90' : 'text-charcoal/85'}">${feat}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="pt-7 space-y-2.5">
+                                <button type="button" onclick="selectTierForSim('${tier.id}')"
+                                    class="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer ${
+                                        tier.featured
+                                            ? 'bg-campfire-terracotta hover:bg-campfire-amber text-white shadow-lg'
+                                            : 'bg-forest-secondary hover:bg-forest-primary text-white shadow-sm'
+                                    }">
+                                    ${tier.id === 'basic' ? 'Pilih Paket Basic' : `Pilih ${tier.name}`}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            monthlyBtn.addEventListener('click', () => {
+                billingCycle = 'monthly';
+                monthlyBtn.classList.add('bg-forest-primary', 'text-white');
+                monthlyBtn.classList.remove('bg-ivory-warm', 'text-charcoal');
+                quarterlyBtn.classList.remove('bg-forest-primary', 'text-white');
+                quarterlyBtn.classList.add('bg-ivory-warm', 'text-charcoal');
+                renderMembershipTiers();
+                updateRoiSimulation();
+            });
+
+            quarterlyBtn.addEventListener('click', () => {
+                billingCycle = 'quarterly';
+                quarterlyBtn.classList.add('bg-forest-primary', 'text-white');
+                quarterlyBtn.classList.remove('bg-ivory-warm', 'text-charcoal');
+                monthlyBtn.classList.remove('bg-forest-primary', 'text-white');
+                monthlyBtn.classList.add('bg-ivory-warm', 'text-charcoal');
+                renderMembershipTiers();
+                updateRoiSimulation();
+            });
+
+            window.selectTierForSim = function(tierId) {
+                selectedTierId = tierId;
+                renderMembershipTiers();
+                updateRoiSimulation();
+                document.getElementById('simulasi-roi').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            // 4. Simulasi Biaya & ROI dengan Add-On Cross-Sell
+            const addonCheckboxes = document.querySelectorAll('.addon-checkbox');
+
+            function getSelectedAddonsSummary() {
+                let addonsPrice = 0;
+                let reachBoost = 0;
+                let ordersBoost = 0;
+                const selectedIds = [];
+
+                addonCheckboxes.forEach(cb => {
+                    if (cb.checked) {
+                        addonsPrice += parseInt(cb.dataset.price, 10) || 0;
+                        reachBoost += parseInt(cb.dataset.reachBoost, 10) || 0;
+                        ordersBoost += parseInt(cb.dataset.ordersBoost, 10) || 0;
+                        selectedIds.push(cb.dataset.addonId);
+                    }
+                });
+
+                return { addonsPrice, reachBoost, ordersBoost, selectedIds };
+            }
+
+            function updateRoiSimulation() {
+                const tier = membershipTiers.find(t => t.id === selectedTierId) || membershipTiers[2];
+                const basePrice = getTierPrice(tier);
+                const { addonsPrice, reachBoost, ordersBoost } = getSelectedAddonsSummary();
+                const grandTotal = basePrice + addonsPrice;
+
+                const cycleMultiplier = billingCycle === 'quarterly' ? 2.7 : 1;
+                const estReach = Math.round((tier.baseReach + reachBoost) * cycleMultiplier);
+                const estOrders = Math.max(4, Math.round((tier.baseOrders + ordersBoost) * cycleMultiplier));
+                // Rata-rata nilai sewa per transaksi Rp 165.000
+                const estRevenue = estOrders * 165000;
+                const roiMultiple = grandTotal > 0 ? (estRevenue / grandTotal).toFixed(1) : '1.0';
+
+                document.getElementById('roi-selected-tier-name').textContent = tier.name;
+                document.getElementById('roi-billing-badge').textContent = billingCycle === 'quarterly' ? 'Kuartalan (3 Bln)' : 'Bulanan';
+                document.getElementById('roi-base-price').textContent = basePrice.toLocaleString('id-ID');
+                document.getElementById('roi-addons-price').textContent = addonsPrice.toLocaleString('id-ID');
+                document.getElementById('roi-grand-total').textContent = grandTotal.toLocaleString('id-ID');
+
+                const discountRow = document.getElementById('roi-renewal-discount-row');
+                if (billingCycle === 'quarterly') {
+                    discountRow.classList.remove('hidden');
+                } else {
+                    discountRow.classList.add('hidden');
+                }
+
+                document.getElementById('roi-est-reach').textContent = estReach.toLocaleString('id-ID');
+                document.getElementById('roi-multiple').textContent = `${roiMultiple}x`;
+            }
+
+            addonCheckboxes.forEach(cb => cb.addEventListener('change', updateRoiSimulation));
+
+            renderMembershipTiers();
+            updateRoiSimulation();
+
+            // 5. Modal Aktivasi & Perpanjangan Membership Interaktif
+            const membershipModal = document.getElementById('membership-modal');
+            const membershipForm = document.getElementById('membership-form');
+            const membershipSuccessBox = document.getElementById('membership-success-box');
+            const modalTierSelect = document.getElementById('modal-tier-select');
+            const modalCycleSelect = document.getElementById('modal-cycle-select');
+            const modalAddonBanner = document.getElementById('modal-addon-banner');
+            const modalAddonFeatured = document.getElementById('modal-addon-featured');
+            const modalAddonRenewal = document.getElementById('modal-addon-renewal');
+
+            let currentModalMode = 'new'; // 'new' | 'renew'
+
+            function setModalMode(mode) {
+                currentModalMode = mode;
+                const newBtn = document.getElementById('mode-new-btn');
+                const renewBtn = document.getElementById('mode-renew-btn');
+
+                if (mode === 'renew') {
+                    renewBtn.classList.add('bg-forest-primary', 'text-white');
+                    renewBtn.classList.remove('bg-transparent', 'text-charcoal');
+                    newBtn.classList.remove('bg-forest-primary', 'text-white');
+                    newBtn.classList.add('bg-transparent', 'text-charcoal');
+                    modalAddonRenewal.checked = true;
+                } else {
+                    newBtn.classList.add('bg-forest-primary', 'text-white');
+                    newBtn.classList.remove('bg-transparent', 'text-charcoal');
+                    renewBtn.classList.remove('bg-forest-primary', 'text-white');
+                    renewBtn.classList.add('bg-transparent', 'text-charcoal');
+                }
+                syncModalSummary();
+            }
+
+            function syncModalSummary() {
+                const tier = membershipTiers.find(t => t.id === modalTierSelect.value) || membershipTiers[2];
+                const cycle = modalCycleSelect.value;
+                let basePrice = cycle === 'quarterly' ? tier.quarterlyPrice : tier.monthlyPrice;
+
+                // Promo perpanjangan (Repeat Purchase) memberi potongan 10% pada paket utama
+                let promoLabel = cycle === 'quarterly' ? 'Diskon Kuartalan 15%' : 'Standar';
+                if (currentModalMode === 'renew') {
+                    basePrice = Math.round(basePrice * 0.9);
+                    promoLabel = cycle === 'quarterly'
+                        ? 'Promo Perpanjangan + Kuartalan Aktif'
+                        : 'Promo Perpanjangan 10% Aktif';
+                }
+
+                let addonsCost = 0;
+                if (modalAddonBanner.checked) addonsCost += 95000;
+                if (modalAddonFeatured.checked) addonsCost += 75000;
+                if (modalAddonRenewal.checked) addonsCost += 55000;
+
+                const total = basePrice + addonsCost;
+
+                document.getElementById('modal-summary-mode').textContent =
+                    currentModalMode === 'renew' ? 'Perpanjangan Membership (Repeat Purchase)' : 'Aktivasi / Upgrade Paket Membership';
+                document.getElementById('modal-summary-promo').textContent = promoLabel;
+                document.getElementById('modal-summary-total').textContent = total.toLocaleString('id-ID');
+            }
+
+            document.getElementById('mode-new-btn').addEventListener('click', () => setModalMode('new'));
+            document.getElementById('mode-renew-btn').addEventListener('click', () => setModalMode('renew'));
+            modalTierSelect.addEventListener('change', syncModalSummary);
+            modalCycleSelect.addEventListener('change', syncModalSummary);
+            document.querySelectorAll('.modal-addon-cb').forEach(cb => cb.addEventListener('change', syncModalSummary));
+
+            window.openMembershipModal = function(tierId = 'premium', cycle = null, isRenewal = false) {
+                modalTierSelect.value = tierId;
+                if (cycle) {
+                    modalCycleSelect.value = cycle;
+                } else {
+                    modalCycleSelect.value = billingCycle;
+                }
+
+                // Sinkronkan add-on dari simulasi halaman
+                const { selectedIds } = getSelectedAddonsSummary();
+                modalAddonBanner.checked = selectedIds.includes('banner');
+                modalAddonFeatured.checked = selectedIds.includes('featured');
+                modalAddonRenewal.checked = selectedIds.includes('renewal_boost') || isRenewal;
+
+                setModalMode(isRenewal ? 'renew' : 'new');
+                membershipForm.classList.remove('hidden');
+                membershipSuccessBox.classList.add('hidden');
+                membershipModal.classList.remove('hidden');
+            };
+
+            window.openModalWithCurrentSim = function() {
+                openMembershipModal(selectedTierId, billingCycle, false);
+            };
+
+            document.getElementById('close-membership-modal').addEventListener('click', () => {
+                membershipModal.classList.add('hidden');
+            });
+
+            membershipForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const tier = membershipTiers.find(t => t.id === modalTierSelect.value) || membershipTiers[2];
+                const storeName = document.getElementById('modal-store-name').value.trim();
+                const totalText = document.getElementById('modal-summary-total').textContent;
+                const actionLabel = currentModalMode === 'renew' ? 'Perpanjangan paket' : 'Aktivasi paket';
+
+                const activeAddons = [];
+                if (modalAddonBanner.checked) activeAddons.push('Banner Promo');
+                if (modalAddonFeatured.checked) activeAddons.push('Featured Product');
+                if (modalAddonRenewal.checked) activeAddons.push('Auto-Reminder Perpanjangan');
+
+                const addonText = activeAddons.length > 0 ? activeAddons.join(', ') : 'tanpa add-on tambahan';
+
+                document.getElementById('membership-success-detail').innerHTML = `
+                    <strong>${actionLabel} ${tier.name}</strong> (${modalCycleSelect.value === 'quarterly' ? '3 Bulan / Kuartalan' : '1 Bulan'}) untuk toko <strong>${storeName}</strong> dengan add-on <strong>${addonText}</strong> (Total: <strong>Rp ${totalText}</strong>) telah tercatat.
+                `;
+
+                membershipForm.classList.add('hidden');
+                membershipSuccessBox.classList.remove('hidden');
+            });
+
+            document.getElementById('close-membership-success').addEventListener('click', () => {
+                membershipModal.classList.add('hidden');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === membershipModal) {
+                    membershipModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
