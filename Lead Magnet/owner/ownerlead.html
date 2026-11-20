@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Gratis Memulai Bisnis Penyewaan Alat Outdoor dan Camping (OWNER)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            primary: '#1B4332',
+                            secondary: '#2D6A4F',
+                            light: '#40916C',
+                        },
+                        campfire: {
+                            terracotta: '#E07A5F',
+                            amber: '#D97706',
+                            hover: '#C85A3D'
+                        },
+                        ivory: {
+                            warm: '#F4F1DE',
+                            clean: '#F8F9FA'
+                        },
+                        charcoal: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Lora"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-ivory-clean text-charcoal font-sans antialiased selection:bg-campfire-terracotta selection:text-white">
+
+    <!-- =====================================================================
+         1. HEADER / NAVBAR (#1B4332)
+    ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-forest-primary text-white shadow-lg border-b border-forest-secondary/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Judul Website + Badge Mitra Owner -->
+                <a href="#" class="flex items-center space-x-3 group focus:outline-none">
+                    <div class="w-11 h-11 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15 shadow-inner group-hover:bg-campfire-terracotta transition-colors duration-300">
+                        <svg class="w-7 h-7 text-ivory-warm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 20h18L12 4 3 20z"/>
+                            <path d="M12 4v16"/>
+                            <path d="M8.5 20l3.5-6 3.5 6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-serif font-bold text-base sm:text-lg leading-tight tracking-tight text-ivory-warm">
+                                RimbaRent
+                            </span>
+                        </div>
+                        <span class="block text-xs font-medium text-emerald-200/90 tracking-wider uppercase">
+                            Panduan Owner
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-ivory-warm/90">
+                    <a href="#target-owner" class="hover:text-campfire-terracotta transition-colors">Target Owner</a>
+                    <a href="#masalah-solusi" class="hover:text-campfire-terracotta transition-colors">Masalah & Solusi</a>
+                    <a href="#manfaat-panduan" class="hover:text-campfire-terracotta transition-colors">Manfaat Panduan</a>
+                    <a href="#alur-bergabung" class="hover:text-campfire-terracotta transition-colors">Alur Bergabung</a>
+                    <a href="#simulasi-pendapatan" class="hover:text-campfire-terracotta transition-colors">Simulasi Pendapatan</a>
+                </nav>
+
+                <!-- Desktop CTA Buttons -->
+                <div class="hidden sm:flex items-center space-x-2.5">
+                    <button type="button" onclick="openOwnerRegisterModal()" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-ivory-warm bg-forest-secondary hover:bg-forest-light border border-white/15 shadow transition-all duration-200 cursor-pointer">
+                        Daftar Menjadi Owner
+                    </button>
+                    <a href="/asset/panduanow.pdf" download="panduanow.pdf" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Download Panduan Gratis
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex lg:hidden">
+                    <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi" class="p-2.5 rounded-xl text-ivory-warm hover:bg-forest-secondary focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-forest-primary border-t border-forest-secondary/50 px-4 pt-3 pb-5 space-y-2">
+            <a href="#target-owner" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Target Owner</a>
+            <a href="#masalah-solusi" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Masalah & Solusi</a>
+            <a href="#manfaat-panduan" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Manfaat Panduan</a>
+            <a href="#alur-bergabung" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Alur Bergabung</a>
+            <a href="#simulasi-pendapatan" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-ivory-warm hover:bg-forest-secondary">Simulasi Pendapatan</a>
+            <div class="pt-2 grid grid-cols-1 gap-2">
+                <a href="/asset/panduanow.pdf" download="panduanow.pdf" class="mobile-nav-link flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow">
+                    Download Panduan Gratis
+                </a>
+                <button type="button" onclick="openOwnerRegisterModal()" class="mobile-nav-link flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-bold text-ivory-warm bg-forest-secondary hover:bg-forest-light border border-white/15">
+                    Daftar Menjadi Owner
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION (Background #F4F1DE)
+    ===================================================================== -->
+    <section class="relative overflow-hidden bg-ivory-warm pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-stone-200/80">
+        <!-- Decorative Topographic SVG Pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="topo-owner" width="120" height="120" patternUnits="userSpaceOnUse">
+                        <path d="M0 60 Q 30 30, 60 60 T 120 60" fill="none" stroke="#1B4332" stroke-width="1.5"/>
+                        <path d="M0 90 Q 30 60, 60 90 T 120 90" fill="none" stroke="#2D6A4F" stroke-width="1"/>
+                        <path d="M0 30 Q 30 0, 60 30 T 120 30" fill="none" stroke="#1B4332" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#topo-owner)"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Kolom Kiri: Headline, Copywriting CTA & 3 Tombol Aksi Utama -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Badge Kecil (#2D6A4F) -->
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-forest-secondary text-white shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-campfire-terracotta mr-2 animate-pulse"></span>
+                        E-Book Digital Gratis • Panduan Mitra & Pemilik Alat Outdoor
+                    </div>
+
+                    <!-- Headline Utama -->
+                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-primary leading-tight">
+                        Panduan Gratis Memulai Bisnis Penyewaan Alat Outdoor dan Camping
+                    </h1>
+
+                    <!-- Deskripsi Produk -->
+                    <p class="text-base sm:text-lg text-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Ubah perlengkapan camping yang tersimpan di rumah menjadi sumber penghasilan tambahan yang menjanjikan. Pelajari cara memulai usaha rental alat outdoor, menentukan tarif sewa, merawat inventaris, dan menjangkau ribuan penyewa melalui platform marketplace.
+                    </p>
+
+                    <!-- Kotak Copywriting CTA Utama -->
+                    <div class="bg-white/90 backdrop-blur-sm border-l-4 border-campfire-terracotta rounded-2xl p-5 shadow-sm text-left">
+                        <p class="text-sm sm:text-base font-medium text-charcoal leading-relaxed">
+                            “Punya perlengkapan camping yang jarang digunakan? Sekarang kamu bisa mulai memanfaatkannya sebagai peluang usaha penyewaan. Dapatkan panduan gratis untuk memulai bisnis rental alat outdoor dan pelajari cara memasarkan produk melalui marketplace kami!”
+                        </p>
+                    </div>
+
+                    <!-- 3 Tombol CTA Utama sesuai Brief -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+                        <!-- Tombol 1: Download Panduan Gratis -->
+                        <a href="/asset/panduanow.pdf" download="panduanow.pdf" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-2xl text-sm sm:text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Download Panduan Gratis
+                        </a>
+
+                        <!-- Tombol 2: Daftar Menjadi Owner -->
+                        <button type="button" onclick="openOwnerRegisterModal()" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-2xl text-sm sm:text-base font-bold text-white bg-forest-secondary hover:bg-forest-primary shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                            </svg>
+                            Daftar Menjadi Owner
+                        </button>
+
+                        <!-- Tombol 3: Mulai Sewakan Produkmu -->
+                        <button type="button" onclick="openOwnerRegisterModal('upload')" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-2xl text-sm sm:text-base font-bold text-forest-primary bg-white hover:bg-stone-100 border-2 border-forest-primary shadow-sm hover:shadow transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 mr-2 text-campfire-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Mulai Sewakan Produkmu
+                        </button>
+                    </div>
+
+                    <!-- Trust Micro-Indicators -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2 text-xs sm:text-sm text-charcoal/80 font-medium">
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 text-forest-secondary mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Panduan E-Book PDF 100% Gratis
+                        </span>
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 text-forest-secondary mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Gratis Pendaftaran Toko Owner
+                        </span>
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 text-forest-secondary mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Ribuan Calon Penyewa Pemula Aktif
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Preview E-Book PDF Interaktif (Edisi Owner) -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-forest-primary via-forest-secondary to-campfire-amber rounded-3xl transform rotate-2 opacity-20 blur-sm"></div>
+                        
+                        <div class="relative bg-forest-primary text-ivory-warm rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/10">
+                            <!-- Ilustrasi Header E-Book Owner -->
+                            <div class="relative rounded-2xl bg-gradient-to-b from-[#133124] to-forest-secondary p-5 mb-6 overflow-hidden border border-white/10">
+                                <div class="flex justify-between items-start relative z-10">
+                                    <span class="px-3 py-1 rounded-lg bg-campfire-amber text-white text-xs font-bold uppercase tracking-wider">
+                                        E-Book Edisi Owner
+                                    </span>
+                                    <span class="text-xs text-emerald-200 font-medium">Panduan Bisnis • PDF</span>
+                                </div>
+                                
+                                <!-- SVG Business & Outdoor Gear Illustration -->
+                                <svg class="w-full h-32 mt-2" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Latar Gunung & Grafik Pertumbuhan -->
+                                    <path d="M20 110L95 40L165 110H20Z" fill="#1B4332"/>
+                                    <path d="M140 110L220 30L300 110H140Z" fill="#23533E"/>
+                                    <!-- Grafik Tren Naik -->
+                                    <path d="M45 92L105 70L155 78L225 36L275 22" stroke="#E07A5F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="105" cy="70" r="4" fill="#F4F1DE"/>
+                                    <circle cx="155" cy="78" r="4" fill="#F4F1DE"/>
+                                    <circle cx="225" cy="36" r="4" fill="#F4F1DE"/>
+                                    <circle cx="275" cy="22" r="5" fill="#D97706"/>
+                                    <!-- Ikon Tenda Rental -->
+                                    <path d="M85 110L120 72L155 110H85Z" fill="#E07A5F"/>
+                                    <path d="M113 110L120 92L127 110H113Z" fill="#1B4332"/>
+                                    <!-- Badge Rupiah -->
+                                    <circle cx="235" cy="78" r="18" fill="#D97706"/>
+                                    <text x="235" y="83" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="sans-serif">Rp</text>
+                                </svg>
+
+                                <h3 class="font-serif text-lg sm:text-xl font-bold text-white mt-1 leading-snug">
+                                    Cetak Profit dari Bisnis Rental Alat Outdoor & Camping
+                                </h3>
+                            </div>
+
+                            <!-- Daftar Bab Interaktif -->
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <p class="text-xs font-bold uppercase tracking-wider text-emerald-300">
+                                        Daftar Materi di Dalam E-Book:
+                                    </p>
+                                    <button type="button" id="hero-preview-ebook-btn" class="text-xs font-bold text-campfire-terracotta hover:underline cursor-pointer">
+                                        Lihat Preview Bab →
+                                    </button>
+                                </div>
+                                <div class="space-y-2.5 text-sm">
+                                    <div class="flex items-start space-x-3 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                                        <span class="flex-shrink-0 w-6 h-6 rounded-lg bg-campfire-terracotta/20 text-campfire-terracotta font-bold flex items-center justify-center text-xs">01</span>
+                                        <div>
+                                            <p class="font-semibold text-white">Fondasi Bisnis Penyewaan Alat Outdoor</p>
+                                            <p class="text-xs text-ivory-warm/75">Memulai dari koleksi pribadi hingga manajemen unit skala toko.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                                        <span class="flex-shrink-0 w-6 h-6 rounded-lg bg-campfire-terracotta/20 text-campfire-terracotta font-bold flex items-center justify-center text-xs">02</span>
+                                        <div>
+                                            <p class="font-semibold text-white">Formula Penentuan Tarif Sewa & BEP</p>
+                                            <p class="text-xs text-ivory-warm/75">Rumus menghitung harga harian, paket hemat, dan balik modal.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                                        <span class="flex-shrink-0 w-6 h-6 rounded-lg bg-campfire-terracotta/20 text-campfire-terracotta font-bold flex items-center justify-center text-xs">03</span>
+                                        <div>
+                                            <p class="font-semibold text-white">SOP Perawatan Alat & Keamanan Transaksi</p>
+                                            <p class="text-xs text-ivory-warm/75">Standar pengecekan pasak, kebersihan tenda, dan jaminan sewa.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                                        <span class="flex-shrink-0 w-6 h-6 rounded-lg bg-campfire-terracotta/20 text-campfire-terracotta font-bold flex items-center justify-center text-xs">04</span>
+                                        <div>
+                                            <p class="font-semibold text-white">Strategi Pemasaran via Marketplace</p>
+                                            <p class="text-xs text-ivory-warm/75">Optimasi foto produk, deskripsi, dan menjangkau pemula.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. TARGET KONSUMEN (5 SEGMEN MITRA OWNER)
+    ===================================================================== -->
+    <section id="target-owner" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary/15 text-forest-secondary mb-3">
+                    Target Mitra Owner
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Siapa yang Cocok Menggunakan Panduan Bisnis Ini?
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg">
+                    Baik kamu baru memiliki beberapa set tenda pribadi maupun sudah mengelola toko rental peralatan gunung, panduan dan marketplace kami dirancang untuk mempercepat pertumbuhan usahamu.
+                </p>
+            </div>
+
+            <!-- 5 Kartu Segmen Owner -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Segmen 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Pemilik Alat Camping</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pemilik tenda, carrier, dan perlengkapan outdoor pribadi yang jarang terpakai dan ingin dijadikan aset produktif.
+                    </p>
+                </div>
+
+                <!-- Segmen 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Pelaku Usaha Rental</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pelaku usaha rental alat camping lokal yang ingin meningkatkan okupansi alat dan merapikan sistem pemesanan.
+                    </p>
+                </div>
+
+                <!-- Segmen 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Pengusaha Outdoor</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Pengusaha toko perlengkapan outdoor yang ingin menambah lini layanan penyewaan untuk memperluas pasar.
+                    </p>
+                </div>
+
+                <!-- Segmen 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Komunitas Pecinta Alam</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Komunitas atau organisasi pecinta alam dengan inventaris basecamp yang ingin dikelola menjadi kas mandiri.
+                    </p>
+                </div>
+
+                <!-- Segmen 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-stone-200/80 transition-all duration-200 flex flex-col items-center text-center group sm:col-span-2 lg:col-span-1">
+                    <div class="w-14 h-14 rounded-2xl bg-ivory-warm text-forest-primary group-hover:bg-forest-primary group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-primary text-base mb-2">Calon Pebisnis Pemula</h3>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">
+                        Individu yang tertarik memulai bisnis penyewaan alat camping dari nol dengan panduan langkah demi langkah.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. MASALAH YANG DIHADAPI OWNER (6 PAIN POINTS) & SOLUSI MARKETPLACE
+    ===================================================================== -->
+    <section id="masalah-solusi" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-y border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-campfire-terracotta text-white mb-3">
+                    Tantangan & Solusi Nyata
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    6 Kendala Umum Pemilik Alat Outdoor & Solusi Kami
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg">
+                    Kami memahami tantangan mengelola perlengkapan camping secara mandiri. Inilah bagaimana panduan bisnis dan ekosistem marketplace kami membantu menyelesaikannya.
+                </p>
+            </div>
+
+            <!-- Grid 6 Kartu Masalah & Solusi -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Pain Point 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-lg bg-red-50 text-campfire-hover text-xs font-bold">Masalah #1</span>
+                            <span class="text-xs font-bold text-forest-secondary">Aset Menganggur</span>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base">
+                            Memiliki perlengkapan camping tetapi belum dimanfaatkan untuk bisnis.
+                        </h3>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 bg-emerald-50/70 p-3.5 rounded-xl">
+                        <p class="text-xs font-bold text-forest-primary mb-1">✓ Solusi Panduan & Marketplace:</p>
+                        <p class="text-xs text-charcoal/85 leading-relaxed">
+                            Ubah alat yang tersimpan di gudang menjadi inventaris sewa siap pakai dengan panduan monetisasi bertahap mulai dari 1 set perlengkapan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pain Point 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-lg bg-red-50 text-campfire-hover text-xs font-bold">Masalah #2</span>
+                            <span class="text-xs font-bold text-forest-secondary">Akuisisi Pelanggan</span>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base">
+                            Kesulitan mendapatkan pelanggan baru secara konsisten.
+                        </h3>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 bg-emerald-50/70 p-3.5 rounded-xl">
+                        <p class="text-xs font-bold text-forest-primary mb-1">✓ Solusi Panduan & Marketplace:</p>
+                        <p class="text-xs text-charcoal/85 leading-relaxed">
+                            Produkmu langsung terhubung dengan calon penyewa pemula, mahasiswa, dan keluarga yang mengunduh panduan camping di website kami.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pain Point 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-lg bg-red-50 text-campfire-hover text-xs font-bold">Masalah #3</span>
+                            <span class="text-xs font-bold text-forest-secondary">Strategi Harga</span>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base">
+                            Belum mengetahui cara menentukan harga sewa yang tepat.
+                        </h3>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 bg-emerald-50/70 p-3.5 rounded-xl">
+                        <p class="text-xs font-bold text-forest-primary mb-1">✓ Solusi Panduan & Marketplace:</p>
+                        <p class="text-xs text-charcoal/85 leading-relaxed">
+                            Dilengkapi tabel acuan tarif harian, diskon durasi multi-hari, dan paket bundling agar harga kompetitif sekaligus cepat balik modal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pain Point 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-lg bg-red-50 text-campfire-hover text-xs font-bold">Masalah #4</span>
+                            <span class="text-xs font-bold text-forest-secondary">Promosi Digital</span>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base">
+                            Kesulitan mempromosikan produk agar menarik minat penyewa.
+                        </h3>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 bg-emerald-50/70 p-3.5 rounded-xl">
+                        <p class="text-xs font-bold text-forest-primary mb-1">✓ Solusi Panduan & Marketplace:</p>
+                        <p class="text-xs text-charcoal/85 leading-relaxed">
+                            Pelajari teknik memotret alat outdoor dengan smartphone dan template copywriting deskripsi spesifikasi yang meyakinkan pembeli.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pain Point 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-lg bg-red-50 text-campfire-hover text-xs font-bold">Masalah #5</span>
+                            <span class="text-xs font-bold text-forest-secondary">Operasional Sewa</span>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base">
+                            Kesulitan mengelola pesanan penyewaan dan jadwal ketersediaan.
+                        </h3>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 bg-emerald-50/70 p-3.5 rounded-xl">
+                        <p class="text-xs font-bold text-forest-primary mb-1">✓ Solusi Panduan & Marketplace:</p>
+                        <p class="text-xs text-charcoal/85 leading-relaxed">
+                            Gunakan format checklist serah-terima barang, pencatatan kalender stok, dan alur pemesanan terstruktur di etalase toko marketplace.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pain Point 6 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-lg bg-red-50 text-campfire-hover text-xs font-bold">Masalah #6</span>
+                            <span class="text-xs font-bold text-forest-secondary">Jangkauan Pasar</span>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base">
+                            Jangkauan pemasaran masih terbatas hanya pada lingkaran teman dekat.
+                        </h3>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 bg-emerald-50/70 p-3.5 rounded-xl">
+                        <p class="text-xs font-bold text-forest-primary mb-1">✓ Solusi Panduan & Marketplace:</p>
+                        <p class="text-xs text-charcoal/85 leading-relaxed">
+                            Tampil di katalog pencarian berbasis lokasi kota sehingga penyewa di daerahmu dapat menemukan dan menyewa alatmu dengan mudah.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. MANFAAT PRODUK / E-BOOK PANDUAN (6 POIN UTAMA)
+    ===================================================================== -->
+    <section id="manfaat-panduan" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Bagian Kiri: Sticky Summary Card -->
+                <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+                    <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-primary text-ivory-warm">
+                        Manfaat E-Book Owner
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary leading-tight">
+                        6 Manfaat Utama yang Kamu Pelajari di Dalam Panduan
+                    </h2>
+                    <p class="text-charcoal/85 text-base leading-relaxed">
+                        Disusun secara ringkas, praktis, dan aplikatif agar pemilik alat outdoor bisa langsung mempraktikkan sistem penyewaan yang tertata rapi sejak hari pertama.
+                    </p>
+
+                    <div class="bg-forest-primary text-ivory-warm rounded-2xl p-6 shadow-lg space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-campfire-amber flex items-center justify-center text-white font-bold">
+                                ★
+                            </div>
+                            <h4 class="font-bold text-lg">Ekosistem Saling Menguntungkan</h4>
+                        </div>
+                        <p class="text-sm text-ivory-warm/85 leading-relaxed">
+                            Kami mengedukasi calon penyewa pemula lewat panduan persiapan camping, lalu menghubungkan kebutuhan sewa mereka langsung ke katalog produk milik para mitra owner seperti kamu.
+                        </p>
+                        <div class="pt-1">
+                            <a href="#unduh-panduan" class="inline-flex items-center text-sm font-bold text-campfire-terracotta hover:text-amber-300 transition">
+                                Unduh Panduan Sekarang →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian Kanan: 6 Poin Manfaat -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Manfaat 1 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-base shadow-sm">
+                            1
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Pengetahuan Dasar Bisnis Penyewaan Alat Outdoor
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Memahami model bisnis rental perlengkapan camping, siklus permintaan akhir pekan/musim liburan, dan kebutuhan paling dicari pemula.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 2 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-base shadow-sm">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Memahami Cara Menentukan Harga Sewa
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Panduan menghitung tarif sewa per 24 jam, skema paket hemat 2–3 hari, serta perhitungan titik balik modal (Break-Even Point) setiap unit alat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 3 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-base shadow-sm">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Strategi Pemasaran Produk yang Efektif
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Cara menyusun paket bundling pemula (Tenda + Matras + Sleeping Bag + Kompor) yang terbukti meningkatkan nilai transaksi per penyewa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 4 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-forest-secondary text-white font-bold flex items-center justify-center text-base shadow-sm">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Membantu Owner Mengelola Perlengkapan yang Disewakan
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Standar pencucian tenda anti-jamur, pelapisan ulang waterproof, pengecekan kelengkapan pasak, serta sistem jaminan identitas penyewa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 5 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-campfire-terracotta text-white font-bold flex items-center justify-center text-base shadow-sm">
+                            5
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Memperkenalkan Peluang Bergabung dengan Marketplace
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Panduan lengkap membuka toko owner, mengatur jam operasional pengambilan alat, dan mengelola pemesanan secara profesional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Manfaat 6 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-200/80 flex items-start space-x-4 hover:border-forest-secondary transition-colors">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-campfire-amber text-white font-bold flex items-center justify-center text-base shadow-sm">
+                            6
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-forest-primary text-base sm:text-lg">
+                                Membantu Memperluas Jangkauan Calon Pelanggan
+                            </h3>
+                            <p class="text-sm text-charcoal/80 mt-1">
+                                Menjangkau segmen pelajar, mahasiswa, komunitas kampus, dan keluarga muda yang mencari penyewaan alat outdoor terpercaya di kotamu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. ALUR STRATEGI PEMASARAN / CARA BERGABUNG (6 LANGKAH FUNNEL)
+    ===================================================================== -->
+    <section id="alur-bergabung" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-warm border-t border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary text-white mb-3">
+                    6 Langkah Mudah Bergabung
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Alur Memulai Bisnis Rentalmu di Marketplace Kami
+                </h2>
+                <p class="text-charcoal/80 text-base">
+                    Mulai dari mempelajari panduannya hingga mengunggah produk pertamamu hanya membutuhkan beberapa langkah sederhana.
+                </p>
+            </div>
+
+            <!-- Grid 6 Langkah Funnel -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                <!-- Langkah 1 -->
+                <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-primary text-white text-xs font-bold mb-3">1</span>
+                        <h4 class="font-bold text-forest-primary text-sm mb-1.5">Kunjungi Landing Page</h4>
+                        <p class="text-xs text-charcoal/75 leading-relaxed">Pelajari peluang bisnis penyewaan perlengkapan outdoor di ekosistem kami.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 2 -->
+                <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-primary text-white text-xs font-bold mb-3">2</span>
+                        <h4 class="font-bold text-forest-primary text-sm mb-1.5">Lihat Penawaran E-Book</h4>
+                        <p class="text-xs text-charcoal/75 leading-relaxed">Akses panduan gratis khusus calon mitra dan pemilik alat camping.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 3 -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-campfire-terracotta shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-campfire-terracotta text-white text-xs font-bold mb-3">3</span>
+                        <h4 class="font-bold text-forest-primary text-sm mb-1.5">Isi Formulir Singkat</h4>
+                        <p class="text-xs text-charcoal/75 leading-relaxed">Masukkan nama, email, dan domisili untuk membuka akses unduhan.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 4 -->
+                <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-secondary text-white text-xs font-bold mb-3">4</span>
+                        <h4 class="font-bold text-forest-primary text-sm mb-1.5">Dapatkan E-Book PDF</h4>
+                        <p class="text-xs text-charcoal/75 leading-relaxed">Unduh dan pelajari strategi harga sewa serta manajemen alat.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 5 -->
+                <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-secondary text-white text-xs font-bold mb-3">5</span>
+                        <h4 class="font-bold text-forest-primary text-sm mb-1.5">Daftar Sebagai Owner</h4>
+                        <p class="text-xs text-charcoal/75 leading-relaxed">Daftarkan akun mitra penyedia alat outdoor di marketplace.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 6 -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-campfire-amber shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-campfire-amber text-white text-xs font-bold mb-3">6</span>
+                        <h4 class="font-bold text-forest-primary text-sm mb-1.5">Unggah Produkmu</h4>
+                        <p class="text-xs text-charcoal/75 leading-relaxed">Lengkapi profil toko dan mulai sewakan perlengkapan outdoor ke pelanggan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. KALKULATOR SIMULASI POTENSI PENGHASILAN OWNER (INTERAKTIF)
+    ===================================================================== -->
+    <section id="simulasi-pendapatan" class="scroll-mt-20 py-16 lg:py-24 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-forest-secondary/15 text-forest-secondary mb-3">
+                    Simulasi Bisnis Interaktif
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest-primary mb-4">
+                    Hitung Potensi Penghasilan & Balik Modal (BEP) Alatmu
+                </h2>
+                <p class="text-charcoal/80 text-base">
+                    Coba simulasikan berapa potensi pendapatan bulanan yang bisa kamu hasilkan dari perlengkapan camping yang kamu miliki.
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl border border-stone-200 overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Panel Input Kiri -->
+                    <div class="lg:col-span-7 p-6 sm:p-10 space-y-6">
+                        <div>
+                            <label for="calc-gear-type" class="block text-sm font-bold text-forest-primary mb-2">
+                                1. Pilih Jenis Perlengkapan Outdoor
+                            </label>
+                            <select id="calc-gear-type" class="w-full px-4 py-3.5 rounded-xl border border-stone-300 text-charcoal font-medium bg-ivory-clean focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                                <option value="tenda" data-rate="45000" data-asset="850000">Tenda Dome Kapasitas 4 Orang (Tarif Rp 45.000/hari)</option>
+                                <option value="paket" data-rate="75000" data-asset="1450000" selected>Paket Camping Pemula 2 Orang (Tarif Rp 75.000/hari)</option>
+                                <option value="carrier" data-rate="30000" data-asset="650000">Tas Carrier 60L + Rain Cover (Tarif Rp 30.000/hari)</option>
+                                <option value="kompor" data-rate="20000" data-asset="250000">Kompor Portable + Nesting Set (Tarif Rp 20.000/hari)</option>
+                                <option value="sb" data-rate="15000" data-asset="180000">Sleeping Bag Polar Tebal (Tarif Rp 15.000/hari)</option>
+                            </select>
+                        </div>
+
+                        <!-- Slider Jumlah Unit -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="calc-units" class="text-sm font-bold text-forest-primary">
+                                    2. Jumlah Unit yang Dimiliki
+                                </label>
+                                <span class="px-3 py-1 rounded-lg bg-forest-secondary/15 text-forest-primary font-extrabold text-sm">
+                                    <span id="calc-units-display">3</span> Unit
+                                </span>
+                            </div>
+                            <input type="range" id="calc-units" min="1" max="20" value="3" class="w-full h-2.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-campfire-terracotta">
+                            <div class="flex justify-between text-xs text-charcoal/60 mt-1">
+                                <span>1 Unit (Pemula)</span>
+                                <span>10 Unit</span>
+                                <span>20 Unit (Toko Rental)</span>
+                            </div>
+                        </div>
+
+                        <!-- Slider Rata-rata Hari Sewa per Bulan -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="calc-days" class="text-sm font-bold text-forest-primary">
+                                    3. Rata-Rata Hari Tersewa per Bulan
+                                </label>
+                                <span class="px-3 py-1 rounded-lg bg-campfire-terracotta/15 text-campfire-hover font-extrabold text-sm">
+                                    <span id="calc-days-display">8</span> Hari / Bulan (4 Akhir Pekan)
+                                </span>
+                            </div>
+                            <input type="range" id="calc-days" min="2" max="24" value="8" class="w-full h-2.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-forest-secondary">
+                            <div class="flex justify-between text-xs text-charcoal/60 mt-1">
+                                <span>2 Hari (1 Weekend)</span>
+                                <span>12 Hari</span>
+                                <span>24 Hari (Ramai)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Hasil Simulasi Kanan (#1B4332) -->
+                    <div class="lg:col-span-5 bg-forest-primary text-ivory-warm p-6 sm:p-10 flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-forest-secondary text-emerald-200 text-xs font-bold uppercase tracking-wider">
+                                Estimasi Potensi Omzet
+                            </span>
+
+                            <div>
+                                <p class="text-xs text-ivory-warm/75">Potensi Pendapatan per Bulan:</p>
+                                <p class="font-serif text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                                    Rp <span id="calc-monthly-income">1.800.000</span>
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10">
+                                    <p class="text-[11px] text-ivory-warm/75">Potensi Setahun (12 Bln):</p>
+                                    <p class="font-bold text-sm sm:text-base text-amber-300 mt-0.5">
+                                        Rp <span id="calc-yearly-income">21.600.000</span>
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 p-3.5 rounded-2xl border border-white/10">
+                                    <p class="text-[11px] text-ivory-warm/75">Estimasi Balik Modal (BEP):</p>
+                                    <p class="font-bold text-sm sm:text-base text-emerald-300 mt-0.5">
+                                        ~<span id="calc-bep-months">2,4</span> Bulan
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="text-xs text-ivory-warm/75 leading-relaxed">
+                                *Simulasi berdasarkan tarif sewa rata-rata marketplace. Pelajari strategi menaikkan okupansi alat hingga 12+ hari/bulan di dalam e-book gratis.
+                            </p>
+                        </div>
+
+                        <button type="button" onclick="openOwnerRegisterModal('upload')" class="w-full py-3.5 px-5 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition cursor-pointer">
+                            Mulai Sewakan Produkmu Sekarang →
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =====================================================================
+         9. BANNER CTA PENUTUP & FOOTER (#1B4332)
+    ===================================================================== -->
+    <section class="py-16 bg-ivory-clean">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl bg-forest-primary text-ivory-warm p-8 sm:p-12 lg:p-14 overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+                    <span class="inline-block px-4 py-1 rounded-full bg-forest-secondary text-xs font-bold uppercase tracking-wider text-emerald-200">
+                        Bergabung Bersama Jaringan Owner Outdoor
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                        Punya Perlengkapan Camping yang Jarang Digunakan?
+                    </h2>
+                    <p class="text-base sm:text-lg text-ivory-warm/90 leading-relaxed">
+                        Sekarang kamu bisa mulai memanfaatkannya sebagai peluang usaha penyewaan. Dapatkan panduan gratis untuk memulai bisnis rental alat outdoor dan pelajari cara memasarkan produk melalui marketplace kami!
+                    </p>
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 pt-2">
+                        <a href="/asset/panduanow.pdf" download="panduanow.pdf" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-2xl text-sm sm:text-base font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-lg transition-all duration-200">
+                            Download Panduan Gratis
+                        </a>
+                        <button type="button" onclick="openOwnerRegisterModal()" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-2xl text-sm sm:text-base font-bold text-white bg-forest-secondary hover:bg-emerald-700 border border-white/15 shadow transition-all duration-200 cursor-pointer">
+                            Daftar Menjadi Owner
+                        </button>
+                        <button type="button" onclick="openOwnerRegisterModal('upload')" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-2xl text-sm sm:text-base font-bold text-forest-primary bg-ivory-warm hover:bg-white shadow transition-all duration-200 cursor-pointer">
+                            Mulai Sewakan Produkmu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-forest-primary text-ivory-warm border-t border-forest-secondary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+                
+                <!-- Brand & Deskripsi -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-forest-secondary flex items-center justify-center border border-white/15">
+                            <svg class="w-6 h-6 text-ivory-warm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 20h18L12 4 3 20z"/>
+                                <path d="M12 4v16"/>
+                                <path d="M8.5 20l3.5-6 3.5 6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-lg text-white">
+                                RimbaRent
+                            </span>
+                            <span class="text-xs text-campfire-terracotta font-bold uppercase tracking-wider">Portal Mitra Owner</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-ivory-warm/80 leading-relaxed max-w-md">
+                        Platform marketplace penyewaan perlengkapan camping & outdoor yang membantu pemilik alat, komunitas pecinta alam, dan pelaku usaha rental menjangkau lebih banyak pelanggan.
+                    </p>
+                </div>
+
+                <!-- Tautan Cepat -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Navigasi Mitra Owner</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li><a href="#target-owner" class="hover:text-campfire-terracotta transition-colors">Target Mitra Owner</a></li>
+                        <li><a href="#masalah-solusi" class="hover:text-campfire-terracotta transition-colors">Masalah & Solusi Bisnis</a></li>
+                        <li><a href="#manfaat-panduan" class="hover:text-campfire-terracotta transition-colors">Manfaat E-Book Panduan</a></li>
+                        <li><a href="#simulasi-pendapatan" class="hover:text-campfire-terracotta transition-colors">Simulasi Penghasilan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Aksi Cepat -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider">Mulai Sekarang</h4>
+                    <ul class="space-y-2 text-sm text-ivory-warm/80">
+                        <li><a href="/asset/panduanow.pdf" download="panduanow.pdf" class="hover:text-campfire-terracotta transition-colors">Download Panduan Bisnis Gratis (PDF)</a></li>
+                        <li><button type="button" onclick="openOwnerRegisterModal()" class="hover:text-campfire-terracotta transition-colors text-left cursor-pointer">Daftar Menjadi Owner Marketplace</button></li>
+                        <li><button type="button" onclick="openOwnerRegisterModal('upload')" class="hover:text-campfire-terracotta transition-colors text-left cursor-pointer">Unggah Katalog Perlengkapan Outdoor</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory-warm/70 gap-4">
+                <p>&copy; 2026 Penyewaan Alat Outdoor dan Camping. Seluruh Hak Cipta Dilindungi.</p>
+                <p>Ekosistem Marketplace Penyewaan Perlengkapan Outdoor Indonesia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL 1: PREVIEW ISI E-BOOK PANDUAN OWNER
+    ===================================================================== -->
+    <div id="owner-ebook-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-stone-200">
+            <div class="bg-forest-primary text-ivory-warm px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-campfire-amber">Preview E-Book Edisi Owner</span>
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-white">Panduan Gratis Memulai Bisnis Penyewaan Alat Outdoor</h3>
+                </div>
+                <button type="button" id="close-owner-ebook-modal" class="p-2 rounded-xl text-ivory-warm hover:bg-forest-secondary transition cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 max-h-[70vh] overflow-y-auto space-y-6 text-sm text-charcoal">
+                <div class="bg-ivory-warm p-4 rounded-2xl border border-stone-200">
+                    <h4 class="font-bold text-forest-primary text-base mb-2">Bab 1: Memulai Bisnis Rental dari Perlengkapan yang Ada</h4>
+                    <p class="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                        Kamu tidak perlu langsung membeli puluhan tenda baru. Mulailah dengan menginventarisasi alat camping yang sudah dimiliki, memastikan kondisinya bersih dan lengkap, lalu menyusunnya menjadi paket sewa pemula yang siap dipasarkan.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-primary text-base mb-2">Bab 2: Acuan Tarif Sewa Harian & Estimasi Balik Modal</h4>
+                    <div class="overflow-x-auto rounded-xl border border-stone-200">
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                            <thead class="bg-forest-secondary text-white">
+                                <tr>
+                                    <th class="p-3">Jenis Perlengkapan</th>
+                                    <th class="p-3">Tarif Sewa / Hari</th>
+                                    <th class="p-3">Target Sewa BEP</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-stone-200">
+                                <tr>
+                                    <td class="p-3 font-medium">Tenda Dome 4 Orang</td>
+                                    <td class="p-3 font-bold text-forest-primary">Rp 45.000</td>
+                                    <td class="p-3">~19 hari sewa</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Tas Carrier 60L</td>
+                                    <td class="p-3 font-bold text-forest-primary">Rp 30.000</td>
+                                    <td class="p-3">~21 hari sewa</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Kompor + Nesting Set</td>
+                                    <td class="p-3 font-bold text-forest-primary">Rp 20.000</td>
+                                    <td class="p-3">~13 hari sewa</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Sleeping Bag Polar</td>
+                                    <td class="p-3 font-bold text-forest-primary">Rp 15.000</td>
+                                    <td class="p-3">~12 hari sewa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200">
+                    <h4 class="font-bold text-forest-primary text-base mb-1">Bab 3: SOP Serah Terima & Perawatan Alat</h4>
+                    <p class="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                        Wajibkan verifikasi kartu identitas aktif saat pengambilan alat, dokumentasikan kondisi frame & resleting bersama penyewa, serta jemur tenda hingga kering sempurna sebelum disimpan kembali.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 px-6 py-4 border-t border-stone-200 flex flex-col sm:flex-row justify-between items-center gap-3">
+                <button type="button" id="modal-to-register-btn" class="w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-forest-secondary hover:bg-forest-primary transition cursor-pointer">
+                    Daftar Menjadi Owner →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 2: FORM PENDAFTARAN MITRA OWNER & UNGGAH PRODUK
+    ===================================================================== -->
+    <div id="owner-register-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-stone-200">
+            <div class="bg-forest-primary text-ivory-warm px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span id="register-modal-badge" class="text-xs font-bold uppercase tracking-wider text-campfire-terracotta">Pendaftaran Mitra Marketplace</span>
+                    <h3 id="register-modal-title" class="font-serif text-xl font-bold text-white">Daftar Menjadi Owner</h3>
+                </div>
+                <button type="button" id="close-register-modal" class="p-2 rounded-xl text-ivory-warm hover:bg-forest-secondary transition cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-5">
+                <!-- Form Pendaftaran Owner -->
+                <form id="owner-register-form" class="space-y-4">
+                    <div>
+                        <label for="reg-store-name" class="block text-xs font-bold text-charcoal mb-1">
+                            Nama Toko / Usaha Rental <span class="text-campfire-terracotta">*</span>
+                        </label>
+                        <input type="text" id="reg-store-name" required placeholder="Contoh: Rimba Camp Gear"
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="reg-owner-name" class="block text-xs font-bold text-charcoal mb-1">
+                                Nama Pemilik <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="reg-owner-name" required placeholder="Nama lengkapmu"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                        <div>
+                            <label for="reg-whatsapp" class="block text-xs font-bold text-charcoal mb-1">
+                                Nomor WhatsApp Aktif <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="tel" id="reg-whatsapp" required placeholder="0812xxxxxxxx"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="reg-city" class="block text-xs font-bold text-charcoal mb-1">
+                                Kota / Area Pengambilan <span class="text-campfire-terracotta">*</span>
+                            </label>
+                            <input type="text" id="reg-city" required placeholder="Contoh: Bandung"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                        </div>
+                        <div>
+                            <label for="reg-gear-count" class="block text-xs font-bold text-charcoal mb-1">
+                                Estimasi Jumlah Alat Siap Sewa
+                            </label>
+                            <select id="reg-gear-count" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-forest-secondary">
+                                <option value="1 - 5 Unit">1 – 5 Unit (Pemula / Pribadi)</option>
+                                <option value="6 - 15 Unit">6 – 15 Unit (Skala Menengah)</option>
+                                <option value="Lebih dari 15 Unit">Lebih dari 15 Unit (Toko Rental)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 px-5 rounded-xl text-sm font-bold text-white bg-campfire-terracotta hover:bg-campfire-amber shadow-md transition cursor-pointer">
+                        Buat Profil Toko & Mulai Sewakan Produkmu
+                    </button>
+                </form>
+
+                <!-- State Sukses Pendaftaran Owner -->
+                <div id="owner-register-success" class="hidden bg-emerald-50 border border-emerald-300 rounded-2xl p-5 text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-forest-secondary text-white mx-auto flex items-center justify-center font-bold text-xl">
+                        ✓
+                    </div>
+                    <h4 class="font-serif font-bold text-forest-primary text-lg">
+                        Selamat Bergabung, <span id="reg-success-store">Toko Outdoor</span>!
+                    </h4>
+                    <p id="reg-success-desc" class="text-xs text-charcoal/85 leading-relaxed"></p>
+                    <div class="bg-white p-3 rounded-xl border border-emerald-200 text-left text-xs space-y-1">
+                        <p class="font-bold text-forest-primary">Langkah Selanjutnya:</p>
+                        <p>1. Siapkan foto jelas perlengkapan outdoor yang akan disewakan.</p>
+                        <p>2. Tentukan tarif sewa harian mengacu pada e-book panduan owner.</p>
+                        <p>3. Tim verifikasi marketplace akan menghubungi WhatsApp kamu untuk aktivasi etalase toko.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT INTERAKTIVITAS & KALKULATOR BISNIS OWNER
+    ===================================================================== -->
+    <script src="script.js"></script>
+</body>
+</html>
